@@ -3,6 +3,7 @@ import HeroSlider from "../../components/HeroSlider/HeroSlider";
 import ServiceCard from "../../components/ServiceCard/ServiceCard";
 import PetSection from "../../components/PetSection/PetSection";
 import TeamSection from "../../components/TeamSection/TeamSection";
+import WinterCare from "../../components/WinterCare/WinterCare";
 
 const Home = () => {
   const [services, setServices] = useState([]);
@@ -21,7 +22,7 @@ const Home = () => {
 
       {/* service section */}
       <section className="max-w-6xl mx-auto px-4 py-12">
-        <h2 className="text-3xl md:text-4xl font-semibold text-center mb-8 text-[#f06b13]">
+        <h2 className="text-3xl md:text-4xl font-semibold text-center mb-8 text-orange-600">
           Popular Winter Care Services
         </h2>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -33,9 +34,8 @@ const Home = () => {
 
       {/* pet we handle section */}
       <PetSection></PetSection>
-
       {/* winter care tips section */}
-
+      <WinterCare></WinterCare>
       {/* meet our expert section */}
       <TeamSection></TeamSection>
     </div>

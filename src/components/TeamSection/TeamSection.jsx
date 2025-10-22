@@ -55,7 +55,7 @@ const TeamSection = () => {
         <div className="flex flex-col md:flex-row md:justify-between">
           {/* Heading */}
           <div className="mb-10">
-            <h2 className="text-4xl font-extrabold text-[#121212]">
+            <h2 className="text-4xl font-extrabold text-orange-600">
               Loyal, Passionate, and Driven
             </h2>
             <p className="text-gray-600 mt-3">
