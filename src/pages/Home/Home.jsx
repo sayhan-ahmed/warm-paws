@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import HeroSlider from "../../components/HeroSlider/HeroSlider";
 import ServiceCard from "../../components/ServiceCard/ServiceCard";
+import PetSection from "../../components/PetSection/PetSection";
 
 const Home = () => {
   const [services, setServices] = useState([]);
@@ -28,7 +29,12 @@ const Home = () => {
           ))}
         </div>
       </section>
+
+      {/* pet we handle section */}
+      <PetSection></PetSection>
+
       {/* winter care tips section */}
+
       {/* meet our expert section */}
     </div>
   );

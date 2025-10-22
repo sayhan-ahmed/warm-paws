@@ -22,7 +22,7 @@ const ServiceCard = ({ service }) => {
           </p>
         </div>
       </div>
-      <button className="btn-primary rounded-tl-2xl rounded-br-2xl mt-4 md:mt-6">
+      <button className="btn-primary rounded-tl-2xl rounded-br-2xl mt-4 md:mt-6 cursor-pointer">
         View Details
       </button>
     </div>

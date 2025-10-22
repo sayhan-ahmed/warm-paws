@@ -5,6 +5,7 @@ import "./Footer.css";
 import { FaFacebook, FaLinkedin } from "react-icons/fa";
 import { PiInstagramLogoFill } from "react-icons/pi";
 import { FaXTwitter } from "react-icons/fa6";
+import { IoCall, IoMailUnread } from "react-icons/io5";
 
 const Footer = () => {
   return (
@@ -36,6 +37,14 @@ const Footer = () => {
               className="border border-gray-600 w-full rounded-full py-3 pl-4 text-gray-500 text-sm"
             />
             <RiSendPlaneFill className="text-white text-2xl absolute right-4 top-1/4 cursor-pointer hover:text-[#f47726]" />
+          </div>
+          <div className="flex items-center justify-center md:justify-start gap-3 text-gray-400 text-sm ml-0 md:ml-4 lg:ml-11">
+            <IoCall />
+            <p>+880 1519610964</p>
+          </div>
+          <div className="flex items-center justify-center md:justify-start gap-3 text-gray-400 text-sm ml-0 md:ml-4 lg:ml-11">
+            <IoMailUnread />
+            <p>sayanahmed228@gmail.com</p>
           </div>
         </div>
         {/* service */}
@@ -89,11 +98,20 @@ const Footer = () => {
             <strong className="text-[#f47726]"> Warmpaws</strong>
           </p>
         </div>
+        {/* footer-link bottom */}
+        <div>
+          <ul className="flex gap-6 pr-0 md:pr-20 text-gray-400 text-sm">
+            <li className="footer-link2">Help Center</li>
+            <li className="footer-link2">Privacy Policy</li>
+            <li className="footer-link2">Terms & Conditions</li>
+          </ul>
+        </div>
+        {/* footer social */}
         <div className="flex gap-4 text-white text-2xl">
-          <FaFacebook />
-          <PiInstagramLogoFill />
-          <FaXTwitter />
-          <FaLinkedin />
+          <FaFacebook className="footer-social" />
+          <PiInstagramLogoFill className="footer-social" />
+          <FaXTwitter className="footer-social" />
+          <FaLinkedin className="footer-social" />
         </div>
       </div>
     </footer>

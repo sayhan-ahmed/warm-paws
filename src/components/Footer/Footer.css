@@ -10,7 +10,8 @@
   list-style: disc;
   transition: transform 0.3s ease, color 0.3s ease;
 }
-.footer-link:hover {
+.footer-link:hover,
+.footer-link2:hover {
   transform: scale(1.05);
   color: #f47726;
   cursor: pointer;
@@ -21,4 +22,12 @@
   justify-content: space-between;
   gap: 100px;
   margin-bottom: 6px;
+}
+.footer-social,
+.footer-link2 {
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+.footer-social:hover {
+  transform: translateY(-4px);
+  cursor: pointer;
 }

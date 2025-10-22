@@ -20,7 +20,7 @@
     "rating": 4.8,
     "slotsAvailable": 2,
     "description": "Comprehensive health check-up focusing on joint health, skin dryness, and cold-related concerns.",
-    "image": "/src/assets/images/pet-health.png",
+    "image": "/src/assets/images/health-check.png",
     "category": "Healthcare"
   },
   {
@@ -68,7 +68,7 @@
     "rating": 4.8,
     "slotsAvailable": 3,
     "description": "Professional grooming with moisturizing paw balm and winter-safe shampoo.",
-    "image": "/src/assets/images/grooming-dog.png",
+    "image": "/src/assets/images/pet-groom.png",
     "category": "Grooming"
   },
   {
