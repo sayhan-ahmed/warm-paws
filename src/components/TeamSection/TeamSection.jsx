@@ -124,7 +124,7 @@ const TeamSection = () => {
 
               {/* Contact button + icons */}
               <div className="mt-6 flex flex-col sm:flex-row items-center gap-4">
-                <button className="flex items-center gap-2 bg-orange-500 text-white font-semibold py-3 px-6 rounded-full hover:bg-orange-600 transition transform hover:-translate-y-1 duration-300 cursor-pointer">
+                <button className="btn-secondary">
                   <span>
                     <MdAddCall />
                   </span>

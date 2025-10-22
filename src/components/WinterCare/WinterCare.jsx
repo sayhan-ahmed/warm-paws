@@ -40,7 +40,7 @@ const WinterCare = () => {
         <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 mt-4 text-center">
           Winter Care Tips for Pets
         </h2>
-        <button className="flex items-center gap-2 bg-orange-500 text-white font-semibold py-3 px-6 rounded-full hover:bg-orange-600 transition transform hover:-translate-y-1 duration-300 cursor-pointer mx-auto my-5">
+        <button className="btn-secondary mx-auto my-5">
           Contact Us <FaPaw />
         </button>
       </div>
@@ -67,7 +67,7 @@ const WinterCare = () => {
             <h2 className="text-3xl lg:text-4xl font-extrabold text-gray-900 mt-4 text-center">
               Winter Care Tips for Pets
             </h2>
-            <button className="flex items-center gap-2 bg-orange-500 text-white font-semibold py-3 px-6 rounded-full hover:bg-orange-600 transition transform hover:-translate-y-1 duration-300 cursor-pointer mx-auto mt-10">
+            <button className="btn-secondary mx-auto mt-10">
               Contact Us <FaPaw />
             </button>
           </div>

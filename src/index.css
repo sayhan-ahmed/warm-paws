@@ -14,3 +14,21 @@
   background-color: rgba(229, 90, 4, 0.934);
   transform: translateY(-4px);
 }
+
+.btn-secondary {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; /* gap-2 */
+  background-color: #f97316; /* bg-orange-500 */
+  color: #fff; /* text-white */
+  font-weight: 600; /* font-semibold */
+  padding: 0.75rem 1.5rem; /* py-3 px-6 */
+  border-radius: 9999px; /* rounded-full */
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background-color: #ea580c; /* hover:bg-orange-600 */
+  transform: translateY(-0.25rem); /* hover:-translate-y-1 */
+}
