@@ -108,10 +108,10 @@ const Footer = () => {
         </div>
         {/* footer social */}
         <div className="flex gap-4 text-white text-2xl">
-          <FaFacebook className="footer-social" />
-          <PiInstagramLogoFill className="footer-social" />
-          <FaXTwitter className="footer-social" />
-          <FaLinkedin className="footer-social" />
+          <FaFacebook className="social" />
+          <PiInstagramLogoFill className="social" />
+          <FaXTwitter className="social" />
+          <FaLinkedin className="social" />
         </div>
       </div>
     </footer>

@@ -6,6 +6,7 @@ import router from "./routes/routes.jsx";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import "animate.css";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>

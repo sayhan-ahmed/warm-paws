@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import HeroSlider from "../../components/HeroSlider/HeroSlider";
 import ServiceCard from "../../components/ServiceCard/ServiceCard";
 import PetSection from "../../components/PetSection/PetSection";
+import TeamSection from "../../components/TeamSection/TeamSection";
 
 const Home = () => {
   const [services, setServices] = useState([]);
@@ -36,6 +37,7 @@ const Home = () => {
       {/* winter care tips section */}
 
       {/* meet our expert section */}
+      <TeamSection></TeamSection>
     </div>
   );
 };
