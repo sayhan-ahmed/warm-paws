@@ -1,0 +1,122 @@
+[
+  {
+    "serviceId": 1,
+    "serviceName": "Winter Coat Fitting for Dogs",
+    "providerName": "PawCare Studio",
+    "providerEmail": "info@pawcare.com",
+    "price": 25,
+    "rating": 4.9,
+    "slotsAvailable": 4,
+    "description": "Custom coat fitting and warm outfit options to keep your dog comfortable in the cold.",
+    "image": "https://i.postimg.cc/qvB9kWLc/dog-coat.png",
+    "category": "Clothing"
+  },
+  {
+    "serviceId": 2,
+    "serviceName": "Winter Grooming & Paw Treatment",
+    "providerName": "CozyPets Grooming",
+    "providerEmail": "hello@cozypets.com",
+    "price": 30,
+    "rating": 4.8,
+    "slotsAvailable": 3,
+    "description": "Professional grooming with moisturizing paw balm and winter-safe shampoo.",
+    "image": "https://i.postimg.cc/Yq5Pbq5D/paw-treatment.png",
+    "category": "Grooming"
+  },
+  {
+    "serviceId": 3,
+    "serviceName": "Heated Pet Bed Setup",
+    "providerName": "WarmTails Care",
+    "providerEmail": "support@warmtails.com",
+    "price": 40,
+    "rating": 4.7,
+    "slotsAvailable": 5,
+    "description": "Installation and customization of electric heated beds for cats and dogs to ensure cozy winter sleep.",
+    "image": "https://i.postimg.cc/HLjRyLhJ/heated-bed.png",
+    "category": "Comfort"
+  },
+  {
+    "serviceId": 4,
+    "serviceName": "Winter Nutrition & Diet Consultation",
+    "providerName": "HealthyPaws Nutritionists",
+    "providerEmail": "contact@healthypaws.com",
+    "price": 35,
+    "rating": 4.9,
+    "slotsAvailable": 6,
+    "description": "Customized winter diet plans to boost immunity and energy for pets during cold weather.",
+    "image": "https://i.postimg.cc/zf3zHknV/winter-diet.png",
+    "category": "Nutrition"
+  },
+  {
+    "serviceId": 5,
+    "serviceName": "Snow Walk & Paw Protection Session",
+    "providerName": "FurHaven Adventures",
+    "providerEmail": "bookings@furhaven.com",
+    "price": 20,
+    "rating": 4.6,
+    "slotsAvailable": 8,
+    "description": "Guided snow walks with protective paw gear to keep pets safe and active during winter outings.",
+    "image": "https://i.postimg.cc/85R4jCbc/snow-walk.png",
+    "category": "Outdoor Activity"
+  },
+  {
+    "serviceId": 6,
+    "serviceName": "Pet Winter Health Check-up",
+    "providerName": "VetCare Clinic",
+    "providerEmail": "clinic@vetcare.com",
+    "price": 50,
+    "rating": 5.0,
+    "slotsAvailable": 2,
+    "description": "Comprehensive health check-up focusing on joint health, skin dryness, and cold-related concerns.",
+    "image": "https://i.postimg.cc/Wp0pYFQt/winter-checkup.png",
+    "category": "Healthcare"
+  },
+  {
+    "serviceId": 7,
+    "serviceName": "Winter Fur Conditioning Treatment",
+    "providerName": "FluffyFriends Spa",
+    "providerEmail": "info@fluffyfriends.com",
+    "price": 28,
+    "rating": 4.7,
+    "slotsAvailable": 4,
+    "description": "Deep conditioning spa treatment to prevent dryness and static buildup in your pet’s winter coat.",
+    "image": "https://i.postimg.cc/fR9MCsv1/fur-conditioning.png",
+    "category": "Grooming"
+  },
+  {
+    "serviceId": 8,
+    "serviceName": "Indoor Play & Warm Exercise Program",
+    "providerName": "HappyPaws Fitness",
+    "providerEmail": "team@happypaws.com",
+    "price": 22,
+    "rating": 4.5,
+    "slotsAvailable": 10,
+    "description": "Safe indoor exercise sessions designed to keep pets active and healthy during the winter months.",
+    "image": "https://i.postimg.cc/pL6HqKwh/indoor-play.png",
+    "category": "Fitness"
+  },
+  {
+    "serviceId": 9,
+    "serviceName": "Winter Bath & Coat Shine Package",
+    "providerName": "PurePet Groomers",
+    "providerEmail": "support@purepet.com",
+    "price": 32,
+    "rating": 4.8,
+    "slotsAvailable": 5,
+    "description": "Warm water baths with gentle winter-formulated shampoo and coat shine spray for a glossy finish.",
+    "image": "https://i.postimg.cc/x1Ns0r5D/winter-bath.png",
+    "category": "Grooming"
+  },
+  {
+    "serviceId": 10,
+    "serviceName": "Pet Winter Safety Workshop",
+    "providerName": "SafePaws Academy",
+    "providerEmail": "academy@safepaws.com",
+    "price": 15,
+    "rating": 4.9,
+    "slotsAvailable": 12,
+    "description": "Educational session for pet owners covering winter hazards, frostbite prevention, and safety tips.",
+    "image": "https://i.postimg.cc/cCk8FfGd/safety-workshop.png",
+    "category": "Training"
+  }
+]
