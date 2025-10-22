@@ -1,2 +1,15 @@
 @import "tailwindcss";
 @plugin "daisyui";
+
+.btn-primary {
+  color: white;
+  font-weight: 600;
+  background-color: #f47726;
+  padding: 10px 20px;
+  border: none;
+  transition: all 0.3s ease-in-out;
+}
+.btn-primary:hover {
+  background-color: black;
+  transform: scale(1.05);
+}
