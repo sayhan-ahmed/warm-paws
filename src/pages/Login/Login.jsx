@@ -1,8 +1,33 @@
-import React from "react";
+import React, { use } from "react";
 import AuthPanel from "../../components/AuthPanel/AuthPanel";
 import { Link } from "react-router";
+import { AuthContext } from "../../provider/AuthProvider";
+import toast from "react-hot-toast";
 
 const Login = () => {
+  const { logIn } = use(AuthContext);
+  const handleLogIn = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const email = form.email.value;
+    const password = form.password.value;
+    console.log({ email, password });
+    toast.promise(
+      logIn(email, password)
+        .then((result) => {
+          const user = result.user;
+          console.log(user);
+        })
+        .catch((error) => {
+          throw new Error(`Failed to register.\nReason: ${error.code}`);
+        }),
+      {
+        loading: "Logging you in...",
+        success: <b>Welcome back!</b>,
+        error: (err) => <b>{err.message}</b>,
+      }
+    );
+  };
   return (
     <AuthPanel>
       <div className="w-full">
@@ -14,13 +39,15 @@ const Login = () => {
           <span className="text-orange-500 font-bold">Warmpaws</span>
         </p>
 
-        <form className="w-full">
+        <form onSubmit={handleLogIn} className="w-full">
           <div className="space-y-4">
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
                 Email address
               </label>
               <input
+                required
+                name="email"
                 type="email"
                 placeholder="Enter email"
                 className="w-full border border-gray-200 rounded-lg px-4 py-3 focus:outline-none focus:ring-1 focus:ring-orange-500"
@@ -32,6 +59,8 @@ const Login = () => {
                 Password
               </label>
               <input
+                required
+                name="password"
                 type="password"
                 placeholder="Enter password"
                 className="w-full border border-gray-200 rounded-lg px-4 py-3 focus:outline-none focus:ring-1 focus:ring-orange-500"

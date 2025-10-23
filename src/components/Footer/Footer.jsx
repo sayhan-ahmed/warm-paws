@@ -62,7 +62,7 @@ const Footer = () => {
         {/* opening hours */}
         <div className="text-white mt-10 md:mt-0 md:mr-10 px-8 md:p-0">
           <h3 className="footer-title">Opening hours</h3>
-          <ul class="opening-hours">
+          <ul className="opening-hours">
             <li>
               <span>Monday</span>
               <span>8:00 - 21:00</span>

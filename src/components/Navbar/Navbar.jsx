@@ -1,8 +1,10 @@
-import React from "react";
+import React, { use } from "react";
 import { Link, NavLink } from "react-router";
 import logo from "/logo2.png";
 import "./Navbar.css";
-import { IoPaw } from "react-icons/io5";
+import { FaUserTie } from "react-icons/fa";
+import { AuthContext } from "../../provider/AuthProvider";
+import toast from "react-hot-toast";
 
 const navLinks = [
   { name: "Home", path: "/" },
@@ -10,6 +12,21 @@ const navLinks = [
   { name: "My Profile", path: "/profile" },
 ];
 const Navbar = () => {
+  const { user, logOut } = use(AuthContext);
+  const handleLogOut = () => {
+    const loadingToast = toast.loading("Logging out...");
+    logOut()
+      .then(() => {
+        setTimeout(() => {
+          toast.dismiss(loadingToast);
+          toast.success("Successfully logged out!");
+        }, 800);
+      })
+      .catch(() => {
+        toast.dismiss(loadingToast);
+        toast.error("Logout failed. Please try again.");
+      });
+  };
   return (
     <nav className="navbar bg-[#FAF6F3] shadow-sm">
       <div className="navbar-start">
@@ -79,14 +96,34 @@ const Navbar = () => {
           ))}
         </ul>
       </div>
-      <div className="navbar-end flex">
-        <Link
-          to="/auth"
-          className="btn mr-0 lg:mr-12 px-2 md:px-5 uppercase font-semibold text-white bg-[#f47726] rounded-4xl hover:bg-gray-800 text-[13px]"
-        >
-          <IoPaw className="text-base md:text-xl mb-1" />
-          Login / Register
-        </Link>
+      <div className="navbar-end flex gap-2">
+        <div>
+          {user && (
+            <div className="flex items-center gap-3">
+              <div className="hidden sm:flex justify-center">
+                <FaUserTie
+                  size={50}
+                  className="bg-orange-100 rounded-full p-4 text-orange-600"
+                />
+              </div>
+            </div>
+          )}
+        </div>
+        {user ? (
+          <button
+            onClick={handleLogOut}
+            className="btn mr-0 lg:mr-12 px-3 md:px-5 uppercase font-semibold text-white bg-[#f47726] hover:bg-gray-800 text-[13px]"
+          >
+            Log Out
+          </button>
+        ) : (
+          <Link
+            to="/auth"
+            className="btn mr-0 lg:mr-12 px-3 md:px-5 uppercase font-semibold text-white bg-[#f47726] hover:bg-gray-800 text-[13px]"
+          >
+            Login / Register
+          </Link>
+        )}
       </div>
     </nav>
   );

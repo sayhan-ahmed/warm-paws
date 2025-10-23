@@ -19,12 +19,12 @@ const AuthPageDesign = () => {
         <p className="text-sm text-gray-500 mb-6 text-center">
           Thank you for being with us
         </p>
-        <button
-          type="submit"
-          className="w-full mt-2 py-3 rounded-full bg-orange-500 text-white text-lg font-semibold shadow-lg cursor-pointer transform transition-all ease-in-out duration-300 hover:scale-95"
+        <Link
+          to="/auth/login"
+          className="block w-full mt-2 py-3 rounded-full bg-orange-500 text-white text-lg text-center font-semibold shadow-lg cursor-pointer transform transition-all ease-in-out duration-300 hover:scale-95"
         >
-          Log In
-        </button>
+          Log In Now!
+        </Link>
         <div className="mt-6 border-t pt-6 text-center">
           <p className="text-sm text-gray-600">
             Don't have an account?{" "}

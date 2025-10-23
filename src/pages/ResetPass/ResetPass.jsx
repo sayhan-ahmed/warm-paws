@@ -27,6 +27,7 @@ const ResetPass = () => {
                 Email address
               </label>
               <input
+                required
                 type="email"
                 placeholder="Enter email"
                 className="w-full border border-gray-200 rounded-lg px-4 py-3 focus:outline-none focus:ring-1 focus:ring-orange-500"

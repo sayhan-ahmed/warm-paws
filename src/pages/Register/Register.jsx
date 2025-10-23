@@ -1,8 +1,37 @@
-import React from "react";
+import React, { use } from "react";
 import AuthPanel from "../../components/AuthPanel/AuthPanel";
 import { Link } from "react-router";
+import { AuthContext } from "../../provider/AuthProvider";
+import toast from "react-hot-toast";
 
 const Register = () => {
+  const { createUser, setUser } = use(AuthContext);
+  const handleRegister = (e) => {
+    e.preventDefault();
+    console.log(e.target);
+    const form = e.target;
+    const name = form.name.value;
+    const email = form.email.value;
+    const photo = form.photo.value;
+    const password = form.password.value;
+    console.log({ name, email, photo, password });
+
+    toast.promise(
+      createUser(email, password)
+        .then((result) => {
+          const user = result.user;
+          setUser(user);
+        })
+        .catch((error) => {
+          throw new Error(`Failed to register.\nReason: ${error.code}`);
+        }),
+      {
+        loading: "Creating your account...",
+        success: <b>Account created successfully!</b>,
+        error: (err) => <b>{err.message}</b>,
+      }
+    );
+  };
   return (
     <AuthPanel>
       <div className="w-full">
@@ -14,25 +43,17 @@ const Register = () => {
           <span className="text-orange-500 font-bold">Warmpaws</span>
         </p>
 
-        <form className="w-full">
+        <form onSubmit={handleRegister} className="w-full">
           <div className="space-y-4">
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
-                First Name
+                Full Name
               </label>
               <input
+                required
+                name="name"
                 type="text"
-                placeholder="Enter your first name"
-                className="w-full border border-gray-200 rounded-lg px-4 py-3 focus:outline-none focus:ring-1 focus:ring-orange-500"
-              />
-            </div>
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                Last Name
-              </label>
-              <input
-                type="text"
-                placeholder="Enter your last name"
+                placeholder="Enter your full name"
                 className="w-full border border-gray-200 rounded-lg px-4 py-3 focus:outline-none focus:ring-1 focus:ring-orange-500"
               />
             </div>
@@ -42,6 +63,8 @@ const Register = () => {
                 Email address
               </label>
               <input
+                required
+                name="email"
                 type="email"
                 placeholder="Enter email"
                 className="w-full border border-gray-200 rounded-lg px-4 py-3 focus:outline-none focus:ring-1 focus:ring-orange-500"
@@ -53,6 +76,8 @@ const Register = () => {
                 Image URL
               </label>
               <input
+                required
+                name="photo"
                 type="text"
                 placeholder="Provide avatar URL"
                 className="w-full border border-gray-200 rounded-lg px-4 py-3 focus:outline-none focus:ring-1 focus:ring-orange-500"
@@ -64,6 +89,8 @@ const Register = () => {
                 Password
               </label>
               <input
+                required
+                name="password"
                 type="password"
                 placeholder="Enter password"
                 className="w-full border border-gray-200 rounded-lg px-4 py-3 focus:outline-none focus:ring-1 focus:ring-orange-500"
@@ -71,8 +98,8 @@ const Register = () => {
             </div>
             <div>
               <label className="flex items-center gap-2 text-sm text-gray-600">
-                <input type="checkbox" className="w-4 h-4" /> Accept Terms &
-                Conditions
+                <input required type="checkbox" className="w-4 h-4" /> Accept
+                Terms & Conditions
               </label>
             </div>
 

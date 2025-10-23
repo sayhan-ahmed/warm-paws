@@ -5,11 +5,11 @@ import { Outlet } from "react-router";
 
 const AuthLayout = () => {
   return (
-    <div>
+    <div className="min-h-screen flex flex-col">
       <header>
         <Navbar></Navbar>
       </header>
-      <main>
+      <main className="flex-1 relative">
         <Outlet></Outlet>
       </main>
       <footer>
