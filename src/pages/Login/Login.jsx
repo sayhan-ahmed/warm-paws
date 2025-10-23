@@ -6,12 +6,14 @@ const Login = () => {
   return (
     <AuthPanel>
       <div className="w-full">
-        <h2 className="text-2xl font-semibold text-gray-800 mb-1">
+        <h2 className="text-2xl font-semibold text-gray-800 mb-1 text-center">
           Welcome Back
         </h2>
-        <p className="text-sm text-gray-500 mb-6">
-          Log in to continue to Warmpaws
+        <p className="text-sm text-gray-500 mb-6 text-center">
+          Log in to continue to{" "}
+          <span className="text-orange-500 font-bold">Warmpaws</span>
         </p>
+
         <form className="w-full">
           <div className="space-y-4">
             <div>

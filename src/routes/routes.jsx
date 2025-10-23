@@ -7,6 +7,8 @@ import Register from "../pages/Register/Register";
 import Login from "../pages/Login/Login";
 import Services from "../pages/Services/Services";
 import AuthLayout from "../layouts/AuthLayout";
+import ResetPass from "../pages/ResetPass/ResetPass";
+import AuthPageDesign from "../layouts/AuthPageDesign";
 
 const router = createBrowserRouter([
   {
@@ -34,12 +36,20 @@ const router = createBrowserRouter([
     Component: AuthLayout,
     children: [
       {
+        index: true,
+        Component: AuthPageDesign,
+      },
+      {
         path: "/auth/login",
         Component: Login,
       },
       {
         path: "/auth/register",
         Component: Register,
+      },
+      {
+        path: "/auth/reset",
+        Component: ResetPass,
       },
     ],
   },
