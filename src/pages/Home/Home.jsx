@@ -4,6 +4,7 @@ import ServiceCard from "../../components/ServiceCard/ServiceCard";
 import PetSection from "../../components/PetSection/PetSection";
 import TeamSection from "../../components/TeamSection/TeamSection";
 import WinterCare from "../../components/WinterCare/WinterCare";
+import { Link } from "react-router";
 
 const Home = () => {
   const [services, setServices] = useState([]);
@@ -35,9 +36,12 @@ const Home = () => {
           </div>
           {/* Explore button */}
           <div className="mb-10 md:mb-0 flex justify-center md:block">
-            <button className="border border-gray-300 rounded-full px-6 py-2 text-gray-700 hover:bg-gray-200 transition-all">
+            <Link
+              to="/services"
+              className="border border-gray-300 rounded-full px-6 py-2 text-gray-700 hover:bg-gray-200 transition-all"
+            >
               Explore All Services
-            </button>
+            </Link>
           </div>
         </div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">

@@ -10,7 +10,9 @@ const ServiceCard = ({ service }) => {
           alt={service.serviceName}
           className="h-80 w-auto object-cover mx-auto"
         />
-        <h3 className="text-lg font-bold mt-2">{service.serviceName}</h3>
+        <h3 className="text-lg font-bold mt-2 line-clamp-1">
+          {service.serviceName}
+        </h3>
         <p className="text-gray-600 my-2 line-clamp-2">{service.description}</p>
         <div className="flex items-center justify-between px-1">
           <div className="flex items-center gap-1 text-[#F47726] bg-[#f4782629] px-2 py-1 rounded-sm">
@@ -21,10 +23,10 @@ const ServiceCard = ({ service }) => {
             $ {service.price}
           </p>
         </div>
+        <button className="btn-primary rounded-tl-2xl rounded-br-2xl mt-4 md:mt-6 cursor-pointer">
+          View Details
+        </button>
       </div>
-      <button className="btn-primary rounded-tl-2xl rounded-br-2xl mt-4 md:mt-6 cursor-pointer">
-        View Details
-      </button>
     </div>
   );
 };
