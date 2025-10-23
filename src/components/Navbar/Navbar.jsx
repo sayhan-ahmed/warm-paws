@@ -11,7 +11,7 @@ const navLinks = [
 ];
 const Navbar = () => {
   return (
-    <nav className="navbar bg-base-100 shadow-sm">
+    <nav className="navbar bg-[#FAF6F3] shadow-sm">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -80,10 +80,13 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="navbar-end flex">
-        <button className="btn mr-0 lg:mr-12 px-2 md:px-5 uppercase font-semibold text-white bg-[#f47726] rounded-4xl hover:bg-gray-800 text-[13px]">
+        <Link
+          to="/auth"
+          className="btn mr-0 lg:mr-12 px-2 md:px-5 uppercase font-semibold text-white bg-[#f47726] rounded-4xl hover:bg-gray-800 text-[13px]"
+        >
           <IoPaw className="text-base md:text-xl mb-1" />
           Login / Register
-        </button>
+        </Link>
       </div>
     </nav>
   );

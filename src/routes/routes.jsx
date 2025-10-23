@@ -6,6 +6,7 @@ import Profile from "../pages/Profile/Profile";
 import Register from "../pages/Register/Register";
 import Login from "../pages/Login/Login";
 import Services from "../pages/Services/Services";
+import AuthLayout from "../layouts/AuthLayout";
 
 const router = createBrowserRouter([
   {
@@ -26,12 +27,18 @@ const router = createBrowserRouter([
         path: "/profile",
         Component: Profile,
       },
+    ],
+  },
+  {
+    path: "/auth",
+    Component: AuthLayout,
+    children: [
       {
-        path: "/login",
+        path: "/auth/login",
         Component: Login,
       },
       {
-        path: "/register",
+        path: "/auth/register",
         Component: Register,
       },
     ],

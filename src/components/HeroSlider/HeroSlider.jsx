@@ -1,5 +1,5 @@
 import React from "react";
-import { FaStar } from "react-icons/fa";
+import { FaRegStar, FaStar, FaStarHalfAlt } from "react-icons/fa";
 import { IoPaw } from "react-icons/io5";
 import Snowfall from "react-snowfall";
 import { Autoplay, Pagination } from "swiper/modules";
@@ -10,42 +10,42 @@ const HeroSlider = () => {
     {
       title: "Snuggle Season for Your Furry Friend",
       subtitle: "Welcome to WarmPaws Winter",
-      rating: "4.8/5",
+      rating: "4.8",
       customers: "25,000+",
       image: "https://i.postimg.cc/J4m5sv45/slide1.png",
     },
     {
       title: "Warm Hearts, Fluffy Sweaters, Happy Pets",
       subtitle: "Winter Comfort Collection",
-      rating: "4.9/5",
+      rating: "4.9",
       customers: "30,000+",
       image: "https://i.postimg.cc/0Q0dn0VW/slide6.jpg",
     },
     {
       title: "Snowy Walks, Cozy Blankets, Endless Love",
       subtitle: "Because Every Pet Deserves Warmth",
-      rating: "4.7/5",
+      rating: "4.7",
       customers: "22,000+",
       image: "https://i.postimg.cc/sg3z0jfG/slide5.jpg",
     },
     {
       title: "Furry Sweater Days & Snowy Paws",
       subtitle: "Wrap Your Pet in Warmth",
-      rating: "4.8/5",
+      rating: "4.8",
       customers: "28,000+",
       image: "https://i.postimg.cc/yxN657yX/slide3.png",
     },
     {
       title: "Blankets, Hot Cocoa, and Paw Prints in the Snow",
       subtitle: "Winter Stories Begin with Them",
-      rating: "4.6/5",
+      rating: "4.5",
       customers: "19,000+",
       image: "https://i.postimg.cc/XqTM8WH9/slide4.avif",
     },
     {
       title: "Cozy Evenings & Wagging Tails by the Hearth",
       subtitle: "Because Love Looks Like This",
-      rating: "4.9/5",
+      rating: "4.9",
       customers: "32,000+",
       image: "https://i.postimg.cc/sXjZjdJ2/slide7.png",
     },
@@ -91,12 +91,31 @@ const HeroSlider = () => {
                     <IoPaw />
                   </span>
                 </button>
-                <div className="mt-4 flex items-center justify-center md:justify-start gap-4">
-                  <div className="flex items-center gap-1 bg-green-100 pr-4 p-2 rounded-full shadow">
-                    <span className="text-yellow-500 ml-1">
-                      <FaStar />
-                    </span>
-                    <span className="font-bold text-xl">{slide.rating}</span>
+                {/* rating and trusted by */}
+                <div className="mt-4 flex items-center justify-center md:justify-start gap-3">
+                  <div className="flex items-center">
+                    {Array.from({ length: 5 }).map((_, i) => {
+                      const ratingValue = parseFloat(slide.rating);
+                      if (ratingValue >= i + 1) {
+                        return (
+                          <FaStar key={i} className="text-yellow-500 text-lg" />
+                        );
+                      } else if (ratingValue >= i + 0.5) {
+                        return (
+                          <FaStarHalfAlt
+                            key={i}
+                            className="text-yellow-500 text-lg"
+                          />
+                        );
+                      } else {
+                        return (
+                          <FaRegStar
+                            key={i}
+                            className="text-gray-300 text-lg"
+                          />
+                        );
+                      }
+                    })}
                   </div>
                   <p className="text-gray-500 text-sm">
                     Trusted by {slide.customers} Customers

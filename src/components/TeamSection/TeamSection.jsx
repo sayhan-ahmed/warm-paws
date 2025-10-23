@@ -55,16 +55,16 @@ const TeamSection = () => {
         <div className="flex flex-col md:flex-row md:justify-between">
           {/* Heading */}
           <div className="mb-10">
-            <h2 className="text-4xl font-extrabold text-orange-600">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl text-center md:text-left font-extrabold text-orange-600">
               Loyal, Passionate, and Driven
             </h2>
-            <p className="text-gray-600 mt-3">
+            <p className="text-gray-600 mt-3 text-center md:text-left">
               Our team is made up of dedicated individuals who share a common
               love for animals.
             </p>
           </div>
           {/* Explore button */}
-          <div className="mb-10 md:mb-0">
+          <div className="mb-10 md:mb-0 flex justify-center md:block">
             <button className="border border-gray-300 rounded-full px-6 py-2 text-gray-700 hover:bg-gray-200 transition-all">
               Explore All Groomers
             </button>

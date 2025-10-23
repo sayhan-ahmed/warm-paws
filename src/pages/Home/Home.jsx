@@ -22,9 +22,24 @@ const Home = () => {
 
       {/* service section */}
       <section className="max-w-6xl mx-auto px-4 py-12">
-        <h2 className="text-3xl md:text-4xl font-semibold text-center mb-8 text-orange-600">
-          Popular Winter Care Services
-        </h2>
+        {/* Heading */}
+        <div className="flex flex-col md:flex-row md:justify-between">
+          <div className="mb-10">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl text-center md:text-left font-extrabold text-orange-600">
+              Popular Winter Care Services
+            </h2>
+            <p className="text-gray-600 mt-3 text-center md:text-left">
+              Ensure your pets stay warm, comfortable, and well-groomed with our
+              specially designed winter care treatments.
+            </p>
+          </div>
+          {/* Explore button */}
+          <div className="mb-10 md:mb-0 flex justify-center md:block">
+            <button className="border border-gray-300 rounded-full px-6 py-2 text-gray-700 hover:bg-gray-200 transition-all">
+              Explore All Services
+            </button>
+          </div>
+        </div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.slice(0, 6).map((service) => (
             <ServiceCard key={service.serviceId} service={service} />
