@@ -3,24 +3,28 @@ import AuthPanel from "../../components/AuthPanel/AuthPanel";
 import { Link } from "react-router";
 import { AuthContext } from "../../provider/AuthProvider";
 import toast from "react-hot-toast";
+import { updateProfile } from "firebase/auth";
 
 const Register = () => {
   const { createUser, setUser } = use(AuthContext);
   const handleRegister = (e) => {
     e.preventDefault();
-    console.log(e.target);
     const form = e.target;
     const name = form.name.value;
     const email = form.email.value;
     const photo = form.photo.value;
     const password = form.password.value;
-    console.log({ name, email, photo, password });
 
     toast.promise(
       createUser(email, password)
         .then((result) => {
           const user = result.user;
-          setUser(user);
+          return updateProfile(user, {
+            displayName: name,
+            photoURL: photo,
+          }).then(() => {
+            setUser({ ...user, displayName: name, photoURL: photo });
+          });
         })
         .catch((error) => {
           throw new Error(`Failed to register.\nReason: ${error.code}`);

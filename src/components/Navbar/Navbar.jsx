@@ -13,20 +13,35 @@ const navLinks = [
 ];
 const Navbar = () => {
   const { user, logOut } = use(AuthContext);
+
   const handleLogOut = () => {
-    const loadingToast = toast.loading("Logging out...");
-    logOut()
-      .then(() => {
-        setTimeout(() => {
-          toast.dismiss(loadingToast);
-          toast.success("Successfully logged out!");
-        }, 800);
-      })
-      .catch(() => {
-        toast.dismiss(loadingToast);
-        toast.error("Logout failed. Please try again.");
+    if (window.confirm("Are you sure you want to log out?")) {
+      toast.promise(
+        logOut()
+          .then(() => {
+            console.log("Logged out");
+          })
+          .catch((err) => {
+            throw new Error(`Logout failed: ${err.code}`);
+          }),
+        {
+          loading: "Logging out...",
+          success: <b>Logged out successfully!</b>,
+          error: (err) => <b>{err.message}</b>,
+        }
+      );
+    } else {
+      toast("Logout cancelled", {
+        icon: "❌",
+        style: {
+          borderRadius: "10px",
+          background: "#333",
+          color: "#fff",
+        },
       });
+    }
   };
+
   return (
     <nav className="navbar bg-[#FAF6F3] shadow-sm">
       <div className="navbar-start">
@@ -96,34 +111,44 @@ const Navbar = () => {
           ))}
         </ul>
       </div>
-      <div className="navbar-end flex gap-2">
-        <div>
+      <div className="navbar-end flex items-center gap-3 relative">
+        {/* user image */}
+        <div className="relative flex items-center group">
+          <Link to="/profile" className="overflow-hidden rounded-full">
+            <img
+              src={
+                user?.photoURL || "https://i.postimg.cc/ZRWLcnw5/6780628.png"
+              }
+              alt="Profile"
+              className="w-10 h-10 rounded-full object-cover cursor-pointer transform transition-transform duration-300 group-hover:scale-105"
+            />
+          </Link>
+
+          {/* hover Name */}
           {user && (
-            <div className="flex items-center gap-3">
-              <div className="hidden sm:flex justify-center">
-                <FaUserTie
-                  size={50}
-                  className="bg-orange-100 rounded-full p-4 text-orange-600"
-                />
-              </div>
-            </div>
+            <span className="absolute right-12 bg-gray-800 text-white text-sm font-medium py-1 px-3 rounded-full opacity-0 translate-x-3 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 whitespace-nowrap">
+              {user.displayName || "User"}
+            </span>
           )}
         </div>
-        {user ? (
-          <button
-            onClick={handleLogOut}
-            className="btn mr-0 lg:mr-12 px-3 md:px-5 uppercase font-semibold text-white bg-[#f47726] hover:bg-gray-800 text-[13px]"
-          >
-            Log Out
-          </button>
-        ) : (
-          <Link
-            to="/auth"
-            className="btn mr-0 lg:mr-12 px-3 md:px-5 uppercase font-semibold text-white bg-[#f47726] hover:bg-gray-800 text-[13px]"
-          >
-            Login / Register
-          </Link>
-        )}
+        {/* Login/Logout button */}
+        <div>
+          {user ? (
+            <button
+              onClick={handleLogOut}
+              className="btn mr-0 lg:mr-12 px-3 md:px-5 uppercase font-semibold text-white bg-[#f47726] hover:bg-gray-800 text-[13px]"
+            >
+              Log Out
+            </button>
+          ) : (
+            <Link
+              to="/auth"
+              className="btn mr-0 lg:mr-12 px-3 md:px-5 uppercase font-semibold text-white bg-[#f47726] hover:bg-gray-800 text-[13px]"
+            >
+              Login
+            </Link>
+          )}
+        </div>
       </div>
     </nav>
   );
