@@ -24,8 +24,8 @@ const Home = () => {
       {/* service section */}
       <section className="max-w-6xl mx-auto px-4 py-12">
         {/* Heading */}
-        <div className="flex flex-col md:flex-row md:justify-between">
-          <div className="mb-10">
+        <div className="flex flex-col md:flex-row md:justify-between my-10 md:mb-30">
+          <div>
             <h2 className="text-2xl md:text-3xl lg:text-4xl text-center md:text-left font-extrabold text-orange-600">
               Popular Winter Care Services
             </h2>
@@ -35,7 +35,7 @@ const Home = () => {
             </p>
           </div>
           {/* Explore button */}
-          <div className="mb-10 md:mb-0 flex justify-center md:block">
+          <div className="mb-10 md:mb-0 mt-2 flex justify-center md:block">
             <Link
               to="/services"
               className="border border-gray-300 rounded-full px-6 py-2 text-gray-700 hover:bg-gray-200 transition-all"

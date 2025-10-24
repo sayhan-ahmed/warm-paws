@@ -1,22 +1,28 @@
 import React, { use } from "react";
 import AuthPanel from "../../components/AuthPanel/AuthPanel";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 import { AuthContext } from "../../provider/AuthProvider";
 import toast from "react-hot-toast";
+import { FcGoogle } from "react-icons/fc";
 
 const Login = () => {
-  const { logIn } = use(AuthContext);
+  const { logIn, googleSignIn, setUser } = use(AuthContext);
+  const navigate = useNavigate();
+
+  // login handle
   const handleLogIn = (e) => {
     e.preventDefault();
     const form = e.target;
     const email = form.email.value;
     const password = form.password.value;
-    console.log({ email, password });
+    // console.log({ email, password });
     toast.promise(
       logIn(email, password)
         .then((result) => {
           const user = result.user;
           console.log(user);
+          form.reset();
+          navigate("/");
         })
         .catch((error) => {
           throw new Error(`Failed to register.\nReason: ${error.code}`);
@@ -24,6 +30,26 @@ const Login = () => {
       {
         loading: "Logging you in...",
         success: <b>Welcome back!</b>,
+        error: (err) => <b>{err.message}</b>,
+      }
+    );
+  };
+
+  // google login handle
+  const handleGoogleLogin = () => {
+    toast.promise(
+      googleSignIn()
+        .then((result) => {
+          const user = result.user;
+          setUser(user);
+          navigate("/");
+        })
+        .catch((error) => {
+          throw new Error(`Google Login failed.\nReason: ${error.code}`);
+        }),
+      {
+        loading: "Connecting to Google...",
+        success: <b>Welcome to Warmpaws!</b>,
         error: (err) => <b>{err.message}</b>,
       }
     );
@@ -85,6 +111,17 @@ const Login = () => {
             >
               Login
             </button>
+            <div>
+              <p className="text-sm text-gray-400 text-center p-3">
+                Other option
+              </p>
+              <button
+                onClick={handleGoogleLogin}
+                className="btn w-full border-0 bg-gray-100 hover:ring-1 ring-orange-500 cursor-pointer"
+              >
+                <FcGoogle size={25} /> Login with Google
+              </button>
+            </div>
           </div>
         </form>
 

@@ -82,7 +82,7 @@ const HeroSlider = () => {
                 <span className="bg-orange-100 text-orange-600 px-4 py-1 rounded-full text-sm font-semibold">
                   {slide.subtitle}
                 </span>
-                <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-extrabold text-gray-800 leading-tight">
+                <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-extrabold text-gray-800 leading-tight mt-3">
                   {slide.title}
                 </h1>
                 <button className="btn-secondary mx-auto md:mx-0">

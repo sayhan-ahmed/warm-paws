@@ -1,12 +1,17 @@
-import React, { use } from "react";
+import React, { use, useState } from "react";
 import AuthPanel from "../../components/AuthPanel/AuthPanel";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 import { AuthContext } from "../../provider/AuthProvider";
 import toast from "react-hot-toast";
 import { updateProfile } from "firebase/auth";
+import { FcGoogle } from "react-icons/fc";
 
 const Register = () => {
-  const { createUser, setUser } = use(AuthContext);
+  const { createUser, setUser, googleSignIn } = use(AuthContext);
+  const navigate = useNavigate();
+  const [passwordError, setPasswordError] = useState("");
+
+  // register handle
   const handleRegister = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -15,10 +20,26 @@ const Register = () => {
     const photo = form.photo.value;
     const password = form.password.value;
 
+    // password validation
+    if (password.length < 6) {
+      setPasswordError("Password must be at least 6 characters long.");
+      return;
+    } else if (!/[A-Z]/.test(password)) {
+      setPasswordError("Password must contain at least one uppercase letter.");
+      return;
+    } else if (!/[a-z]/.test(password)) {
+      setPasswordError("Password must contain at least one lowercase letter.");
+      return;
+    } else {
+      setPasswordError("");
+    }
+    // create user
     toast.promise(
       createUser(email, password)
         .then((result) => {
           const user = result.user;
+          form.reset();
+          navigate("/");
           return updateProfile(user, {
             displayName: name,
             photoURL: photo,
@@ -36,6 +57,27 @@ const Register = () => {
       }
     );
   };
+
+  // google Signup handle
+  const handleGoogleSignup = () => {
+    toast.promise(
+      googleSignIn()
+        .then((result) => {
+          const user = result.user;
+          setUser(user);
+          navigate("/");
+        })
+        .catch((error) => {
+          throw new Error(`Google Signup failed.\nReason: ${error.code}`);
+        }),
+      {
+        loading: "Connecting to Google...",
+        success: <b>Welcome to Warmpaws!</b>,
+        error: (err) => <b>{err.message}</b>,
+      }
+    );
+  };
+
   return (
     <AuthPanel>
       <div className="w-full">
@@ -99,6 +141,9 @@ const Register = () => {
                 placeholder="Enter password"
                 className="w-full border border-gray-200 rounded-lg px-4 py-3 focus:outline-none focus:ring-1 focus:ring-orange-500"
               />
+              {passwordError && (
+                <p className="text-red-500 text-xs mt-1">{passwordError}</p>
+              )}
             </div>
             <div>
               <label className="flex items-center gap-2 text-sm text-gray-600">
@@ -113,6 +158,17 @@ const Register = () => {
             >
               Register
             </button>
+            <div>
+              <p className="text-sm text-gray-400 text-center p-3">
+                Other option
+              </p>
+              <button
+                onClick={handleGoogleSignup}
+                className="btn w-full border-0 bg-gray-100 hover:ring-1 ring-orange-500 cursor-pointer"
+              >
+                <FcGoogle size={25} /> Signup with Google
+              </button>
+            </div>
           </div>
         </form>
 
