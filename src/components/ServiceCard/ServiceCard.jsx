@@ -6,7 +6,7 @@ const ServiceCard = ({ service, accentColor = "#4A4645" }) => {
   const { serviceId, serviceName, image, description, rating, price } = service;
   return (
     <div
-      className="relative bg-white rounded-2xl shadow-md px-6 pt-12 pb-6 w-full max-w-sm mx-auto transition hover:shadow-lg"
+      className="relative bg-white rounded-2xl shadow-md px-6 pt-12 pb-6 w-full max-w-sm mx-auto transition hover:shadow-lg mt-16"
       style={{ borderTop: `4px solid ${accentColor}` }}
     >
       {/* Avatar Circle */}

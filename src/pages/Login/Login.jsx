@@ -1,6 +1,6 @@
 import React, { use } from "react";
 import AuthPanel from "../../components/AuthPanel/AuthPanel";
-import { Link, useNavigate } from "react-router";
+import { Link, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../../provider/AuthProvider";
 import toast from "react-hot-toast";
 import { FcGoogle } from "react-icons/fc";
@@ -8,6 +8,7 @@ import { FcGoogle } from "react-icons/fc";
 const Login = () => {
   const { logIn, googleSignIn, setUser } = use(AuthContext);
   const navigate = useNavigate();
+  const location = useLocation();
 
   // login handle
   const handleLogIn = (e) => {
@@ -22,7 +23,7 @@ const Login = () => {
           const user = result.user;
           console.log(user);
           form.reset();
-          navigate("/");
+          navigate(`${location.state ? location.state : "/"}`);
         })
         .catch((error) => {
           throw new Error(`Failed to register.\nReason: ${error.code}`);
@@ -117,7 +118,7 @@ const Login = () => {
               </p>
               <button
                 onClick={handleGoogleLogin}
-                className="btn w-full border-0 bg-gray-100 hover:ring-1 ring-orange-500 cursor-pointer"
+                className="flex items-center justify-center gap-2 py-3 w-full border-0 font-semibold bg-gray-100 hover:ring-1 ring-orange-500 cursor-pointer"
               >
                 <FcGoogle size={25} /> Login with Google
               </button>

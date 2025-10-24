@@ -3,8 +3,27 @@ import { FaStar } from "react-icons/fa";
 import { IoLocationSharp } from "react-icons/io5";
 import { FaRegCalendarAlt, FaShieldAlt } from "react-icons/fa";
 import toast from "react-hot-toast";
+import { Link } from "react-router";
 
 const ServiceDetailsCard = ({ service }) => {
+  const formRef = useRef(null);
+
+  if (!service) {
+    return (
+      <div className="text-center py-20">
+        <h2 className="text-2xl font-semibold text-red-600">
+          Service Not Found
+        </h2>
+        <p className="text-gray-600 mt-2">Please check the URL or go back.</p>
+        <Link
+          to="/services"
+          className="inline-block mt-4 px-5 py-2 bg-orange-500 text-white rounded-lg hover:bg-orange-600 cursor-pointer transform transition-all ease-in-out duration-300 hover:scale-105"
+        >
+          Back to Services
+        </Link>
+      </div>
+    );
+  }
   const {
     image,
     serviceName,
@@ -14,9 +33,8 @@ const ServiceDetailsCard = ({ service }) => {
     slotsAvailable,
     description,
     category,
-  } = service || {};
+  } = service;
 
-  const formRef = useRef(null);
   const handleScrollToForm = () => {
     formRef.current?.scrollIntoView({ behavior: "smooth" });
   };

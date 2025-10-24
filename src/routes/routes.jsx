@@ -10,6 +10,7 @@ import AuthLayout from "../layouts/AuthLayout";
 import ResetPass from "../pages/ResetPass/ResetPass";
 import AuthPageDesign from "../layouts/AuthPageDesign";
 import ServiceDetails from "../pages/ServiceDetails/ServiceDetails";
+import PrivateRoute from "../provider/PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -56,7 +57,12 @@ const router = createBrowserRouter([
   },
   {
     path: "/service-details/:id",
-    Component: ServiceDetails,
+    // Component: ServiceDetails,
+    element: (
+      <PrivateRoute>
+        <ServiceDetails></ServiceDetails>
+      </PrivateRoute>
+    ),
     loader: () => fetch("/petCare.json"),
   },
 ]);

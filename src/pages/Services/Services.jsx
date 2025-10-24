@@ -15,7 +15,7 @@ const Services = () => {
   return (
     <div className="bg-base-200">
       <div className="w-4/5 mx-auto">
-        <div className="p-10 pb-20">
+        <div className="p-10">
           <h2 className="text-2xl md:text-3xl lg:text-4xl text-center font-extrabold text-orange-600">
             Popular Winter Care Services
           </h2>

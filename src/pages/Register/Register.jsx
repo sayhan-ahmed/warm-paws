@@ -10,6 +10,7 @@ const Register = () => {
   const { createUser, setUser, googleSignIn } = use(AuthContext);
   const navigate = useNavigate();
   const [passwordError, setPasswordError] = useState("");
+  const [nameError, setNameError] = useState("");
 
   // register handle
   const handleRegister = (e) => {
@@ -20,6 +21,13 @@ const Register = () => {
     const photo = form.photo.value;
     const password = form.password.value;
 
+    // name validation
+    if (name.length < 5) {
+      setNameError("Name Should be more than 5 characters");
+      return;
+    } else {
+      setNameError("");
+    }
     // password validation
     if (password.length < 6) {
       setPasswordError("Password must be at least 6 characters long.");
@@ -102,6 +110,9 @@ const Register = () => {
                 placeholder="Enter your full name"
                 className="w-full border border-gray-200 rounded-lg px-4 py-3 focus:outline-none focus:ring-1 focus:ring-orange-500"
               />
+              {nameError && (
+                <p className="text-red-500 text-xs mt-1">{nameError}</p>
+              )}
             </div>
 
             <div>
@@ -164,9 +175,9 @@ const Register = () => {
               </p>
               <button
                 onClick={handleGoogleSignup}
-                className="btn w-full border-0 bg-gray-100 hover:ring-1 ring-orange-500 cursor-pointer"
+                className="flex items-center justify-center gap-2 py-3 w-full border-0 font-semibold bg-gray-100 hover:ring-1 ring-orange-500 cursor-pointer"
               >
-                <FcGoogle size={25} /> Signup with Google
+                <FcGoogle size={25} /> Login with Google
               </button>
             </div>
           </div>
