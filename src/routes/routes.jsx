@@ -9,6 +9,7 @@ import Services from "../pages/Services/Services";
 import AuthLayout from "../layouts/AuthLayout";
 import ResetPass from "../pages/ResetPass/ResetPass";
 import AuthPageDesign from "../layouts/AuthPageDesign";
+import ServiceDetails from "../pages/ServiceDetails/ServiceDetails";
 
 const router = createBrowserRouter([
   {
@@ -52,6 +53,11 @@ const router = createBrowserRouter([
         Component: ResetPass,
       },
     ],
+  },
+  {
+    path: "/service-details/:id",
+    Component: ServiceDetails,
+    loader: () => fetch("/petCare.json"),
   },
 ]);
 export default router;

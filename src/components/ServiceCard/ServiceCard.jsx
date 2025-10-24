@@ -1,7 +1,9 @@
 import React from "react";
 import { FaStar, FaQuoteRight, FaStarHalfAlt, FaRegStar } from "react-icons/fa";
+import { Link } from "react-router";
 
 const ServiceCard = ({ service, accentColor = "#4A4645" }) => {
+  const { serviceId, serviceName, image, description, rating, price } = service;
   return (
     <div
       className="relative bg-white rounded-2xl shadow-md px-6 pt-12 pb-6 w-full max-w-sm mx-auto transition hover:shadow-lg"
@@ -17,8 +19,8 @@ const ServiceCard = ({ service, accentColor = "#4A4645" }) => {
           style={{ backgroundColor: `${accentColor}20` }}
         >
           <img
-            src={service.image}
-            alt={service.serviceName}
+            src={image}
+            alt={serviceName}
             className="w-full h-full object-cover rounded-full"
           />
         </div>
@@ -27,18 +29,18 @@ const ServiceCard = ({ service, accentColor = "#4A4645" }) => {
       {/* Content */}
       <div className="text-center mt-12">
         <h3 className="text-lg font-extrabold" style={{ color: accentColor }}>
-          {service.serviceName}
+          {serviceName}
         </h3>
         <hr className="my-3 border-gray-200" />
         <p className="text-gray-500 text-sm leading-relaxed line-clamp-3">
-          {service.description}
+          {description}
         </p>
 
         <div className="flex justify-between items-center mt-5">
           {/* Rating */}
           <div className="flex items-center gap-1 text-orange-400">
             {Array.from({ length: 5 }).map((_, i) => {
-              const ratingValue = parseFloat(service.rating);
+              const ratingValue = parseFloat(rating);
               if (ratingValue >= i + 1) {
                 return <FaStar key={i} className="text-sm" />;
               } else if (ratingValue >= i + 0.5) {
@@ -47,17 +49,18 @@ const ServiceCard = ({ service, accentColor = "#4A4645" }) => {
                 return <FaRegStar key={i} className="text-gray-300 text-sm" />;
               }
             })}
-            <span className="ml-1">{service.rating}</span>
+            <span className="ml-1">{rating}</span>
           </div>
-          <p className="text-green-600 text-lg font-semibold mt-1">
-            ${service.price}
-          </p>
+          <p className="text-green-600 text-lg font-semibold mt-1">${price}</p>
         </div>
         {/* Bottom Section */}
         <div className="flex items-center justify-between mt-5">
-          <button className="btn-primary rounded-tl-2xl rounded-br-2xl cursor-pointer">
+          <Link
+            to={`/service-details/${serviceId}`}
+            className="btn-primary rounded-tl-2xl rounded-br-2xl cursor-pointer"
+          >
             View Details
-          </button>
+          </Link>
 
           {/* Quote Icon */}
           <div
