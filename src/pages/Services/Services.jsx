@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import ServiceCard from "../../components/ServiceCard/ServiceCard";
+import TeamSection from "../../components/TeamSection/TeamSection";
 
 const Services = () => {
   const [services, setServices] = useState([]);
@@ -14,7 +15,7 @@ const Services = () => {
   return (
     <div className="bg-base-200">
       <div className="w-4/5 mx-auto">
-        <div className="p-10">
+        <div className="p-10 pb-20">
           <h2 className="text-2xl md:text-3xl lg:text-4xl text-center font-extrabold text-orange-600">
             Popular Winter Care Services
           </h2>
@@ -29,6 +30,7 @@ const Services = () => {
           ))}
         </div>
       </div>
+      <TeamSection></TeamSection>
     </div>
   );
 };
