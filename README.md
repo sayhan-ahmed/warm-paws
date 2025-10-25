@@ -2,7 +2,7 @@
 
 WarmPaws is a cozy, winter-themed platform designed to help pet owners keep their furry friends warm, safe, and healthy during the cold season. This single-page application (SPA) allows users to explore local pet care services, winter pet clothing, grooming options, and expert tips—all within a friendly, intuitive interface. Whether you're a new pet parent or seeking specialized winter care, WarmPaws is your go-to companion for ensuring your pets thrive in chilly weather.
 
-## 🔗 Live URL: warmpaws9.netlify.app
+## 🔗 Live URL: https://warmpaws9.netlify.app/
 
 ## ✨ Key Features
 
