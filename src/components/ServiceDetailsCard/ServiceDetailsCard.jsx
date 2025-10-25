@@ -28,6 +28,7 @@ const ServiceDetailsCard = ({ service }) => {
     image,
     serviceName,
     providerName,
+    providerEmail,
     rating,
     price,
     slotsAvailable,
@@ -90,7 +91,10 @@ const ServiceDetailsCard = ({ service }) => {
             </div>
             <div className="flex items-start gap-3">
               <FaShieldAlt className="text-orange-600 text-xl mt-0.5" />
-              <p>Service Category: {category}</p>
+              <p>
+                Service Category:{" "}
+                <span className="text-red-800 font-medium">{category}</span>
+              </p>
             </div>
           </div>
 
@@ -124,6 +128,12 @@ const ServiceDetailsCard = ({ service }) => {
               </span>
               . A trusted studio offering quality services for pet owners with
               care and professionalism.
+            </p>
+            <p className="mt-2 text-sm text-gray-500">
+              Provider Email:{" "}
+              <span className="font-medium text-green-600">
+                {providerEmail}
+              </span>
             </p>
           </div>
 

@@ -45,7 +45,7 @@ const Login = () => {
         .then((result) => {
           const user = result.user;
           setUser(user);
-          navigate("/");
+          navigate(location.state?.from || "/");
         })
         .catch((error) => {
           throw new Error(`Google Login failed.\nReason: ${error.code}`);
@@ -138,7 +138,7 @@ const Login = () => {
               to="/auth/register"
               className="text-orange-600 font-semibold hover:underline"
             >
-              Register
+              Sign Up
             </Link>
           </p>
         </div>

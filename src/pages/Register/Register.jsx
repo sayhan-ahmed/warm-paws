@@ -176,7 +176,7 @@ const Register = () => {
                 onClick={handleGoogleSignup}
                 className="flex items-center justify-center gap-2 py-3 w-full border-0 font-semibold bg-gray-100 hover:ring-1 ring-orange-500 cursor-pointer"
               >
-                <FcGoogle size={25} /> Login with Google
+                <FcGoogle size={25} /> Signup with Google
               </button>
             </div>
           </div>

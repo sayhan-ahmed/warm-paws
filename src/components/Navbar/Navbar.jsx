@@ -144,7 +144,7 @@ const Navbar = () => {
               to="/auth/login"
               className="btn mr-0 lg:mr-12 p-3 md:px-5 uppercase font-semibold text-white bg-[#f47726] hover:bg-gray-800 text-[13px]"
             >
-              Login
+              Login <span className="hidden sm:block">/ Register</span>
             </Link>
           )}
         </div>

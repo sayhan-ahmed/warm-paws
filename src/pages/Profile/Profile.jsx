@@ -180,7 +180,7 @@ const ProfilePage = () => {
                   type="submit"
                   className="flex-1 py-3 bg-[#3B82F6] hover:bg-[#2563EB] text-white font-semibold rounded-md cursor-pointer transform transition-all ease-in-out duration-300 hover:scale-95"
                 >
-                  Save Changes
+                  Update Profile
                 </button>
                 <button
                   type="button"

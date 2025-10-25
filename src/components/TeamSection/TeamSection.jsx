@@ -56,7 +56,7 @@ const TeamSection = () => {
           {/* Heading */}
           <div className="mb-10">
             <h2 className="text-2xl md:text-3xl lg:text-4xl text-center md:text-left font-extrabold text-orange-600">
-              Loyal, Passionate, and Driven
+              Meet Our Experts
             </h2>
             <p className="text-gray-600 mt-3 text-center md:text-left">
               Our team is made up of dedicated individuals who share a common

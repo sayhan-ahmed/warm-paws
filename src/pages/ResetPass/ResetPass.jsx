@@ -68,7 +68,7 @@ const ResetPass = () => {
               type="submit"
               className="w-full mt-2 py-3 rounded-full bg-orange-500 text-white font-semibold shadow-lg cursor-pointer transform transition-all ease-in-out duration-300 hover:scale-95"
             >
-              Get OTP
+              Reset Password
             </button>
           </div>
         </form>

@@ -6,6 +6,7 @@ import { FaFacebook, FaLinkedin } from "react-icons/fa";
 import { PiInstagramLogoFill } from "react-icons/pi";
 import { FaXTwitter } from "react-icons/fa6";
 import { IoCall, IoMailUnread } from "react-icons/io5";
+import { Link } from "react-router";
 
 const Footer = () => {
   return (
@@ -14,7 +15,7 @@ const Footer = () => {
       <div className="flex flex-col md:flex-row items-start md:items-center justify-between py-10">
         {/* logo side */}
         <div className="w-full px-4 md:px-0 md:w-1/4 mb-10 md:mb-0">
-          <div className="flex flex-col lg:flex-row items-center justify-center md:justify-start">
+          <Link to={'/'} className="flex flex-col lg:flex-row items-center justify-center md:justify-start">
             <img
               src={logo}
               alt="website-logo"
@@ -23,7 +24,7 @@ const Footer = () => {
             <span className="text-white text-base md:text-2xl uppercase font-bold">
               Warm<span className="text-[#f47726]">paws</span>
             </span>
-          </div>
+          </Link>
           <p className="text-white ml-0 md:ml-7 lg:ml-11 p-4 md:p-0">
             We’re here to care for your pets and answer all your questions!
             Whether you’re a new pet parent or want to schedule an appointment.
