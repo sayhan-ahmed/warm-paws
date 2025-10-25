@@ -1,14 +1,31 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Navbar from "../components/Navbar/Navbar";
-import { Outlet } from "react-router";
+import { Outlet, useLocation } from "react-router";
 import Footer from "../components/Footer/Footer";
+import Loader from "../components/Loader/Loader";
 
 const Root = () => {
+  const location = useLocation();
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    setLoading(true);
+    const timeout = setTimeout(() => setLoading(false), 2000);
+    return () => clearTimeout(timeout);
+  }, [location.pathname]);
+
   return (
-    <div>
-      <Navbar></Navbar>
-      <Outlet></Outlet>
-      <Footer></Footer>
+    <div className="min-h-screen flex flex-col">
+      {loading && <Loader />}
+      <header>
+        <Navbar></Navbar>
+      </header>
+      <main>
+        <Outlet></Outlet>{" "}
+      </main>
+      <footer>
+        <Footer></Footer>
+      </footer>
     </div>
   );
 };

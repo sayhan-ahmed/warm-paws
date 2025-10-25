@@ -11,12 +11,14 @@ import ResetPass from "../pages/ResetPass/ResetPass";
 import AuthPageDesign from "../layouts/AuthPageDesign";
 import ServiceDetails from "../pages/ServiceDetails/ServiceDetails";
 import PrivateRoute from "../provider/PrivateRoute";
+import Loader from "../components/Loader/Loader";
 
 const router = createBrowserRouter([
   {
     path: "/",
     Component: Root,
     errorElement: <ErrorPage></ErrorPage>,
+    hydrateFallbackElement: <Loader></Loader>,
     children: [
       {
         index: true,
