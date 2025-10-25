@@ -8,7 +8,7 @@
     "rating": 4.9,
     "slotsAvailable": 4,
     "description": "Keeping dogs warm during winter requires more than just a cute outfit — it’s about providing comfort, protection, and freedom of movement. Our Winter Coat Fitting for Dogs service ensures your pet stays cozy without overheating or feeling restricted. Each fitting is tailored to your dog’s breed, body shape, and fur density, guaranteeing the perfect combination of warmth and flexibility. We use premium materials that are water-resistant, breathable, and easy to clean.\nDuring the session, we assess your dog’s measurements, recommend suitable coat designs, and offer advice on layering for extreme cold. Whether you’re going on daily walks or snowy hikes, your pet will stay stylish, snug, and shielded from cold winds. We also teach owners how to properly maintain the coat, check for fit comfort, and ensure maximum durability. Every fitting includes a post-wear comfort check to help your furry friend feel their best all season long.",
-    "image": "/src/assets/images/winter-coat-dog.png",
+    "image": "https://i.postimg.cc/wMRnpXLN/winter-coat-dog.png",
     "category": "Clothing"
   },
   {
@@ -20,7 +20,7 @@
     "rating": 4.8,
     "slotsAvailable": 2,
     "description": "Cold weather can challenge your pet’s immune system, joint flexibility, and skin health. Our Pet Winter Health Check-up is a complete wellness evaluation designed to prepare your furry friend for the colder months. This service includes an in-depth physical exam, joint and muscle assessment, coat condition analysis, and weight management review. We also check for seasonal allergies, frostbite risks, and energy deficiencies that commonly appear during winter.\nOur veterinarians will guide you through diet adjustments, hydration tips, and safe exercise routines that support overall vitality. We pay special attention to older pets and breeds prone to arthritis or dry skin, ensuring they receive preventive treatments. The goal is simple — a happy, active pet that enjoys winter without discomfort. Each visit concludes with a custom health plan and recommendations tailored to your pet’s age, size, and lifestyle.",
-    "image": "/src/assets/images/health-check.png",
+    "image": "https://i.postimg.cc/RV74JmJm/health-check.png",
     "category": "Healthcare"
   },
   {
@@ -32,7 +32,7 @@
     "rating": 4.9,
     "slotsAvailable": 6,
     "description": "During winter, pets expend more energy to stay warm, which makes proper nutrition essential. Our Winter Nutrition & Diet Consultation helps design the perfect cold-weather meal plan for your companion. We assess your pet’s current diet, metabolism, activity level, and breed-specific needs to develop a plan that supports immunity, joint health, and coat strength. Using high-quality ingredients and balanced formulas, we ensure your pet gets the right mix of protein, healthy fats, and micronutrients.\nThe consultation also includes advice on hydration, meal timing, and supplements that boost energy and digestion in colder temperatures. For picky eaters or pets with sensitivities, we suggest alternative ingredients and feeding techniques that keep them healthy and satisfied. Every plan is easy to follow and designed to enhance your pet’s energy, mood, and resistance to winter stress. Because a nourished pet is a happy pet — inside and out.",
-    "image": "/src/assets/images/nutrition-diet.png",
+    "image": "https://i.postimg.cc/762pv1g6/nutrition-diet.png",
     "category": "Nutrition"
   },
   {
@@ -44,7 +44,7 @@
     "rating": 4.7,
     "slotsAvailable": 5,
     "description": "Create a warm sanctuary for your pet this winter with our Heated Pet Bed Setup service. We provide customized heated bedding solutions designed to ensure comfort, safety, and restful sleep. Each setup includes temperature-controlled pads with automatic shut-off functions, energy-efficient heating layers, and cozy padding options suitable for cats and dogs alike. Our team helps you choose materials based on your pet’s age, size, and sleeping habits, ensuring both comfort and breathability.\nThe service includes installation, temperature calibration, and safety demonstrations for owners. With this setup, your pet can enjoy consistent warmth that soothes muscles and promotes deep relaxation even on the coldest nights. The result? Healthier joints, better sleep, and a cozy haven your furry friend will adore. Say goodbye to chilly floors and restless nights — and hello to perfect warmth and comfort.",
-    "image": "/src/assets/images/heat-pet-bed.png",
+    "image": "https://i.postimg.cc/wvRdqYdg/heat-pet-bed.png",
     "category": "Comfort"
   },
   {
@@ -56,7 +56,7 @@
     "rating": 4.6,
     "slotsAvailable": 8,
     "description": "Our Snow Walk & Paw Protection service ensures your pet’s paws stay safe and happy during outdoor winter adventures. Cold pavements, snow, and salt can cause painful cracks and irritation, but with our custom paw care plan, those worries disappear. We provide durable, flexible paw boots fitted to your pet’s exact size for maximum comfort and mobility. These boots offer excellent traction to prevent slipping while walking on icy paths. Alongside fitting, we apply a nourishing paw balm enriched with natural oils to protect against dryness and frostbite. Our experts will teach you proper paw maintenance routines and how to detect early signs of injury or sensitivity. Whether it’s a casual snow walk or a playful romp, your dog will stay protected every step of the way.\nEnjoy the winter fun without worrying about cold paws or discomfort. Winter walks are magical, but icy paths and road salt can be tough on your pet’s paws. Our Snow Walks and Paw Protection Care service combines outdoor fun with complete paw safety. Afterward, we offer a paw-cleaning session to remove salt and debris. Your pet enjoys every snowy step while staying safe, comfortable, and excited for the next adventure.",
-    "image": "/src/assets/images/paw-protection.png",
+    "image": "https://i.postimg.cc/htt64RLG/paw-protection.png",
     "category": "Outdoor Activity"
   },
   {
@@ -68,7 +68,7 @@
     "rating": 4.8,
     "slotsAvailable": 3,
     "description": "Our Winter Grooming and Paw Care package provides complete coat and skin protection. Each session begins with a warm, hydrating bath using premium shampoos to combat dryness. After drying, we trim and brush the coat to remove tangles and maintain volume. Paws receive a nourishing balm massage that heals cracks and locks in moisture. The result is a fresh, clean, and shiny coat your pet will love. Regular winter grooming improves hygiene, prevents matting, and reduces shedding, keeping your pet healthy, happy, and photo-ready for the season. Cold winds and dry air can damage your pet’s coat and skin, but our Winter Grooming and Paw Hydration service keeps them healthy and radiant.\nThe session begins with a warm bath using moisturizing shampoos that protect against dryness and irritation. We then trim, brush, and style the coat to maintain shape and comfort. Each treatment includes a deep paw balm massage using natural oils to heal cracks and lock in moisture. We finish with a soft towel wrap and a calming scent mist that leaves your pet refreshed and glossy. Regular grooming helps maintain hygiene, manage shedding, and prevent matting — essential for your pet’s winter comfort and happiness.",
-    "image": "/src/assets/images/pet-groom.png",
+    "image": "https://i.postimg.cc/c17bQLhj/pet-groom.png",
     "category": "Grooming"
   },
   {
@@ -80,7 +80,7 @@
     "rating": 4.7,
     "slotsAvailable": 4,
     "description": "Keep your pet’s fur smooth, shiny, and strong with our Winter Fur Conditioning for Pets service. Using premium natural oils and hydrating formulas, we deeply nourish coats affected by cold, dry air. The process includes a gentle wash, conditioning mask, and warm blow-dry that restores softness and volume. This treatment reduces static, prevents matting, and supports healthy skin by sealing in moisture. Every coat type receives personalized attention to achieve a perfect, glossy texture. Ideal for both dogs and cats, this spa experience also relaxes your pet through calm brushing and massage. Let your furry friend enjoy the luxurious care they deserve — vibrant, healthy, and winter-ready.\nThe Fur Conditioning Spa for Pets nourishes and revitalizes dry coats through a deep hydration process. Using rich botanical oils, we apply a conditioning mask that softens fur, eliminates static, and enhances shine. The warm blow-dry treatment locks in smoothness and gives your pet a silky finish. This service is ideal for long-haired breeds that struggle with matting or dullness during cold months. Every session is calm, gentle, and spa-like, ensuring your furry friend leaves looking refreshed and feeling adored — the true winter glow-up for pets.",
-    "image": "/src/assets/images/spa.png",
+    "image": "https://i.postimg.cc/VkhGYrsW/spa.png",
     "category": "Grooming"
   },
   {
@@ -92,7 +92,7 @@
     "rating": 4.5,
     "slotsAvailable": 10,
     "description": "Our Indoor Play and Warm Exercise Time keeps pets active, happy, and healthy even on the coldest days. Designed for safe indoor environments, this program includes agility games, interactive puzzles, and guided physical exercises. Each session is supervised by trained pet fitness experts who adapt activities to match your pet’s energy level and personality. We focus on building endurance, flexibility, and confidence through positive reinforcement. The space is temperature-controlled, cushioned, and sanitized for comfort and safety. Beyond fitness, these sessions boost mental stimulation and reduce boredom during long winter stays indoors. Perfect for pets of all ages, this is the ultimate way to keep tails wagging all season long.\nOur Indoor Warm Exercise Program keeps pets fit and active while avoiding cold outdoor exposure. The session includes agility games, gentle runs, and cognitive play to promote fitness and focus. Every activity is adjusted to your pet’s energy level and temperament, ensuring safety and enjoyment. The temperature-controlled indoor space maintains comfort, while soft flooring supports healthy joints. Ideal for energetic breeds or pets recovering from illness, this program keeps tails wagging and spirits high throughout winter. Exercise meets warmth in the best way possible.",
-    "image": "/src/assets/images/indoor-exercise.png",
+    "image": "https://i.postimg.cc/vTXhCDSf/indoor-exercise.png",
     "category": "Fitness"
   },
   {
@@ -104,7 +104,7 @@
     "rating": 4.8,
     "slotsAvailable": 5,
     "description": "Our Winter Bath and Coat Shine Care brings warmth, cleanliness, and a radiant glow to your pet’s coat. We begin with a gentle warm-water wash using winter-safe shampoos that remove dirt while preserving natural oils. Then, a rich conditioner infused with coconut and aloe deeply moisturizes fur and skin. After drying, we brush and polish the coat with a light serum for a sleek finish. Each session includes ear cleaning, coat trimming, and a relaxing towel wrap. This treatment not only refreshes appearance but also prevents dandruff, dryness, and static buildup. Let your pet sparkle with health and comfort while enjoying a spa-like winter bathing experience.\nWinter Bath and Shine Care is a gentle yet effective cleaning and conditioning experience for your pet. We use temperature-safe water and nourishing shampoo to remove dirt while preserving natural oils. A post-bath conditioner strengthens fur and prevents dryness. Each treatment ends with a coat shine mist that adds luster and softness. This service also includes ear cleaning and coat trimming to keep your pet polished and comfortable. With regular sessions, your pet will enjoy glowing fur and lasting freshness through the coldest months.",
-    "image": "/src/assets/images/bath.png",
+    "image": "https://i.postimg.cc/j544JLTp/bath.png",
     "category": "Grooming"
   },
   {
@@ -116,7 +116,7 @@
     "rating": 4.9,
     "slotsAvailable": 12,
     "description": "Prepare for the season with our Winter Safety and Care Workshop — an informative and engaging session for all pet owners. Led by certified trainers, this workshop covers essential winter care knowledge including frostbite prevention, safe outdoor activity tips, and emergency first-aid practices. Attendees learn how to spot signs of discomfort, select proper winter clothing, and manage hydration in cold weather. The session includes live demonstrations, take-home safety checklists, and expert Q&A time. Whether you’re new to pet ownership or experienced, you’ll gain confidence in protecting your furry friend from seasonal hazards. Equip yourself with the skills and awareness to make winter joyful and worry-free for your beloved companion.\nThe Winter Pet Safety Workshop equips pet owners with essential knowledge to protect furry friends during cold months. Conducted by certified trainers, it covers frostbite prevention, safe walking practices, first-aid basics, and proper winter gear selection. Participants receive printed guides, demonstrations, and personalized Q&A time. You’ll also learn about cold-weather diet tips and signs of hypothermia. Ideal for both new and experienced owners, this workshop helps you confidently care for your pet through every frost and flurry, ensuring warmth, safety, and peace of mind.",
-    "image": "/src/assets/images/workshop.png",
+    "image": "https://i.postimg.cc/8C8RKhPH/workshop.png",
     "category": "Training"
   },
   {
@@ -128,7 +128,7 @@
     "rating": 4.9,
     "slotsAvailable": 5,
     "description": "The Winter Pet Massage Therapy service helps your furry friend unwind, improve circulation, and ease joint tension during chilly months. Using gentle, breed-appropriate massage techniques, our certified therapists target key pressure points to relieve stiffness, support flexibility, and boost relaxation. Each session is tailored to your pet’s size, age, and comfort level, using warmed natural oils that soothe the skin and enhance coat health. The therapy promotes better blood flow, reduces anxiety, and strengthens the bond between you and your companion.\nWe also teach owners simple at-home massage routines to continue the benefits daily. Perfect for senior pets, active dogs, or those recovering from cold-weather aches, this treatment ensures your furry friend stays loose, calm, and comfortable all winter long. Your pet will leave each session with a relaxed body, a peaceful spirit, and an extra dose of winter warmth. Nothing says love like a cozy, healing touch.",
-    "image": "/src/assets/images/pet-massage.png",
+    "image": "https://i.postimg.cc/dtLGJWhm/pet-massage.png",
     "category": "Wellness"
   },
   {
@@ -140,7 +140,7 @@
     "rating": 4.8,
     "slotsAvailable": 7,
     "description": "Capture the magic of the season with our Winter Pet Photo Experience — a professional photoshoot designed to highlight your pet’s unique charm amid a winter wonderland setting. Each session includes creative themes like snowy backdrops, cozy blankets, and playful props to bring out genuine expressions. Our photographers are experts in animal behavior, ensuring every shot feels natural, not forced. We use soft lighting and warm tones to enhance fur texture and eye sparkle. The package includes a selection of high-resolution digital images and optional framed prints.\nWhether it’s a holiday card or a cherished keepsake, this experience celebrates your pet’s personality and the cozy spirit of winter. Owners can join the photos too for heartwarming family portraits. With treats, toys, and gentle handling, we make sure every pet feels comfortable and camera-ready. Create timeless memories with your furry friend that melt even the coldest winter days.",
-    "image": "/src/assets/images/pet-photo.png",
+    "image": "https://i.postimg.cc/HsRXnQ57/pet-photo.png",
     "category": "Photography"
   }
 ]
