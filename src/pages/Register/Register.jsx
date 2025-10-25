@@ -5,6 +5,7 @@ import { AuthContext } from "../../provider/AuthContext";
 import toast from "react-hot-toast";
 import { updateProfile } from "firebase/auth";
 import { FcGoogle } from "react-icons/fc";
+import ShowPassword from "../../components/ShowPassword/ShowPassword";
 
 const Register = () => {
   const { createUser, setUser, googleSignIn } = use(AuthContext);
@@ -145,13 +146,7 @@ const Register = () => {
               <label className="block text-sm font-medium text-gray-700 mb-2">
                 Password
               </label>
-              <input
-                required
-                name="password"
-                type="password"
-                placeholder="Enter password"
-                className="w-full border border-gray-200 rounded-lg px-4 py-3 focus:outline-none focus:ring-1 focus:ring-orange-500"
-              />
+              <ShowPassword name="password" placeholder="Enter password" />
               {passwordError && (
                 <p className="text-red-500 text-xs mt-1">{passwordError}</p>
               )}

@@ -17,7 +17,7 @@ const AuthPageDesign = () => {
           You are Logged Out
         </h2>
         <p className="text-sm text-gray-500 mb-6 text-center">
-          Thank you for being with us
+          You need to login to view service details
         </p>
         <Link
           to="/auth/login"

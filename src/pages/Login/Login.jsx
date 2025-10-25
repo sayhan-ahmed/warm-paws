@@ -4,6 +4,7 @@ import { Link, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../../provider/AuthContext";
 import toast from "react-hot-toast";
 import { FcGoogle } from "react-icons/fc";
+import ShowPassword from "../../components/ShowPassword/ShowPassword";
 
 const Login = () => {
   const { logIn, googleSignIn, setUser } = use(AuthContext);
@@ -85,13 +86,7 @@ const Login = () => {
               <label className="block text-sm font-medium text-gray-700 mb-2">
                 Password
               </label>
-              <input
-                required
-                name="password"
-                type="password"
-                placeholder="Enter password"
-                className="w-full border border-gray-200 rounded-lg px-4 py-3 focus:outline-none focus:ring-1 focus:ring-orange-500"
-              />
+              <ShowPassword name="password" placeholder="Enter password" />
             </div>
 
             <div className="flex justify-between items-center">
