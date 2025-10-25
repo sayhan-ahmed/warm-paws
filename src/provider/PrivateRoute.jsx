@@ -31,7 +31,7 @@ const PrivateRoute = ({ children }) => {
   if (user && user?.email) {
     return children;
   }
-  return <Navigate state={location.pathname} to="/auth" />;
+  return <Navigate to="/auth" state={{ from: location.pathname }} replace />;
 };
 
 export default PrivateRoute;

@@ -1,4 +1,4 @@
-import React, { use } from "react";
+import React, { useContext, useRef } from "react";
 import AuthPanel from "../../components/AuthPanel/AuthPanel";
 import { Link, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../../provider/AuthContext";
@@ -7,7 +7,8 @@ import { FcGoogle } from "react-icons/fc";
 import ShowPassword from "../../components/ShowPassword/ShowPassword";
 
 const Login = () => {
-  const { logIn, googleSignIn, setUser } = use(AuthContext);
+  const { logIn, googleSignIn, setUser } = useContext(AuthContext);
+  const emailRef = useRef();
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -24,7 +25,7 @@ const Login = () => {
           const user = result.user;
           console.log(user);
           form.reset();
-          navigate(`${location.state ? location.state : "/"}`);
+          navigate(location.state?.from || "/");
         })
         .catch((error) => {
           throw new Error(`Failed to register.\nReason: ${error.code}`);
@@ -56,6 +57,14 @@ const Login = () => {
       }
     );
   };
+
+  // forget password handle
+  const handleForgetPass = (e) => {
+    e.preventDefault();
+    const email = emailRef.current?.value || "";
+    navigate("/auth/reset", { state: { email } });
+  };
+
   return (
     <AuthPanel>
       <div className="w-full">
@@ -77,6 +86,7 @@ const Login = () => {
                 required
                 name="email"
                 type="email"
+                ref={emailRef}
                 placeholder="Enter email"
                 className="w-full border border-gray-200 rounded-lg px-4 py-3 focus:outline-none focus:ring-1 focus:ring-orange-500"
               />
@@ -94,7 +104,7 @@ const Login = () => {
                 <input type="checkbox" className="w-4 h-4" /> Remember me
               </label>
               <Link
-                to="/auth/reset"
+                onClick={handleForgetPass}
                 className="text-sm text-orange-600 hover:underline"
               >
                 Forgot password?

@@ -1,9 +1,11 @@
 import React from "react";
 import AuthPanel from "../components/AuthPanel/AuthPanel";
 import { FaUserTie } from "react-icons/fa";
-import { Link } from "react-router";
+import { Link, useLocation } from "react-router";
 
 const AuthPageDesign = () => {
+  const location = useLocation();
+  const from = location.state?.from || "/";
   return (
     <AuthPanel>
       <div className="w-full">
@@ -21,6 +23,7 @@ const AuthPageDesign = () => {
         </p>
         <Link
           to="/auth/login"
+          state={{ from }}
           className="block w-full mt-2 py-3 rounded-full bg-orange-500 text-white text-lg text-center font-semibold shadow-lg cursor-pointer transform transition-all ease-in-out duration-300 hover:scale-95"
         >
           Log In Now!

@@ -1,9 +1,37 @@
-import React from "react";
-import { Link } from "react-router";
+import React, { useContext } from "react";
 import AuthPanel from "../../components/AuthPanel/AuthPanel";
 import { FaUserLock } from "react-icons/fa";
+import { useLocation } from "react-router";
+import { AuthContext } from "../../provider/AuthContext";
+import toast from "react-hot-toast";
 
 const ResetPass = () => {
+  const { resetPass } = useContext(AuthContext);
+  const location = useLocation();
+  const emailFromLogin = location.state?.email || "";
+
+  const handleReset = (e) => {
+    e.preventDefault();
+    const email = e.target.email.value;
+
+    toast.promise(
+      resetPass(email)
+        .then(() => {
+          setTimeout(() => {
+            window.open("https://mail.google.com", "_blank");
+          }, 1500);
+        })
+        .catch((error) => {
+          throw new Error(`Failed to send reset email.\nReason: ${error.code}`);
+        }),
+      {
+        loading: "Sending reset link...",
+        success: <b>Password reset link sent! Check your Gmail!</b>,
+        error: (err) => <b>{err.message}</b>,
+      }
+    );
+  };
+
   return (
     <AuthPanel>
       <div className="w-full">
@@ -20,7 +48,7 @@ const ResetPass = () => {
           Recover it now!
         </p>
 
-        <form className="w-full">
+        <form onSubmit={handleReset} className="w-full">
           <div className="space-y-4">
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -29,6 +57,8 @@ const ResetPass = () => {
               <input
                 required
                 type="email"
+                name="email"
+                defaultValue={emailFromLogin}
                 placeholder="Enter email"
                 className="w-full border border-gray-200 rounded-lg px-4 py-3 focus:outline-none focus:ring-1 focus:ring-orange-500"
               />

@@ -1,4 +1,4 @@
-import React, { use, useState } from "react";
+import React, { useContext, useState } from "react";
 import AuthPanel from "../../components/AuthPanel/AuthPanel";
 import { Link, useNavigate } from "react-router";
 import { AuthContext } from "../../provider/AuthContext";
@@ -8,7 +8,7 @@ import { FcGoogle } from "react-icons/fc";
 import ShowPassword from "../../components/ShowPassword/ShowPassword";
 
 const Register = () => {
-  const { createUser, setUser, googleSignIn } = use(AuthContext);
+  const { createUser, setUser, googleSignIn } = useContext(AuthContext);
   const navigate = useNavigate();
   const [passwordError, setPasswordError] = useState("");
   const [nameError, setNameError] = useState("");
@@ -43,28 +43,32 @@ const Register = () => {
       setPasswordError("");
     }
     // create user
-    toast.promise(
-      createUser(email, password)
-        .then((result) => {
-          const user = result.user;
-          form.reset();
-          navigate("/");
-          return updateProfile(user, {
-            displayName: name,
-            photoURL: photo,
-          }).then(() => {
-            setUser({ ...user, displayName: name, photoURL: photo });
-          });
-        })
-        .catch((error) => {
-          throw new Error(`Failed to register.\nReason: ${error.code}`);
-        }),
-      {
-        loading: "Creating your account...",
-        success: <b>Account created successfully!</b>,
-        error: (err) => <b>{err.message}</b>,
-      }
-    );
+    toast
+      .promise(
+        createUser(email, password)
+          .then((result) => {
+            const user = result.user;
+            form.reset();
+            return updateProfile(user, {
+              displayName: name,
+              photoURL: photo,
+            }).then(() => {
+              setUser({ ...user, displayName: name, photoURL: photo });
+              return true;
+            });
+          })
+          .catch((error) => {
+            throw new Error(`Failed to register.\nReason: ${error.code}`);
+          }),
+        {
+          loading: "Creating your account...",
+          success: <b>Account created successfully!</b>,
+          error: (err) => <b>{err.message}</b>,
+        }
+      )
+      .then(() => {
+        setTimeout(() => navigate("/"), 500);
+      });
   };
 
   // google Signup handle
