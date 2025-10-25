@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { AuthContext } from "../../provider/AuthProvider";
+import { AuthContext } from "../../provider/AuthContext";
 import { FaUser, FaBell, FaSignOutAlt, FaUserTie } from "react-icons/fa";
 import { IoSettingsSharp } from "react-icons/io5";
 import { updateProfile } from "firebase/auth";

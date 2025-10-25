@@ -1,7 +1,7 @@
 import React, { use, useEffect, useState } from "react";
-import { AuthContext } from "./AuthProvider";
 import { Navigate, useLocation } from "react-router";
 import { Hourglass } from "react-loader-spinner";
+import { AuthContext } from "./AuthContext";
 
 const PrivateRoute = ({ children }) => {
   const { user, loading } = use(AuthContext);

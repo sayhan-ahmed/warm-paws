@@ -2,8 +2,7 @@ import React, { use } from "react";
 import { Link, NavLink } from "react-router";
 import logo from "/logo2.png";
 import "./Navbar.css";
-import { FaUserTie } from "react-icons/fa";
-import { AuthContext } from "../../provider/AuthProvider";
+import { AuthContext } from "../../provider/AuthContext";
 import toast from "react-hot-toast";
 
 const navLinks = [

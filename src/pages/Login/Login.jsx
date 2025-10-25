@@ -1,7 +1,7 @@
 import React, { use } from "react";
 import AuthPanel from "../../components/AuthPanel/AuthPanel";
 import { Link, useLocation, useNavigate } from "react-router";
-import { AuthContext } from "../../provider/AuthProvider";
+import { AuthContext } from "../../provider/AuthContext";
 import toast from "react-hot-toast";
 import { FcGoogle } from "react-icons/fc";
 
