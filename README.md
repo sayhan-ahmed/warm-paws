@@ -78,6 +78,48 @@ WarmPaws is built using modern web technologies and libraries to ensure high per
 
 - **Netlify:** Easily deployable on modern hosting platforms for fast and reliable delivery.
 
+## 🧩 Dependencies
+```json
+"dependencies": {
+    "@react-spring/web": "^10.0.3",
+    "@tailwindcss/vite": "^4.1.15",
+    "animate.css": "^4.1.1",
+    "daisyui": "^5.3.7",
+    "firebase": "^12.4.0",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "react-hot-toast": "^2.6.0",
+    "react-icons": "^5.5.0",
+    "react-loader-spinner": "^7.0.3",
+    "react-router": "^7.9.4",
+    "react-snowfall": "^2.3.0",
+    "swiper": "^12.0.3",
+    "tailwindcss": "^4.1.15"
+  }
+```
+## 🚀 Run Locally
+
+```bash
+# Clone & enter the project
+git clone https://github.com/sayhan-ahmed/warm-paws.git
+cd warm-paws
+
+# Install dependencies
+npm install
+# or → yarn / pnpm install
+
+# Setup environment variables
+cp .env.example .env
+# Edit .env with your own keys (MongoDB URI, etc.)
+
+# Start dev server
+npm run dev
+
+# Open localhost in your browser
+# e.g. http://localhost:5173 for Vite
+```
+
+
 # 🤝 Contributing
 
 Feel free to fork the repo, submit pull requests, or report issues. Contributions to enhance WarmPaws are welcome!
