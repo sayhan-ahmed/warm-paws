@@ -119,18 +119,6 @@ const Navbar = () => {
                 </NavLink>
               </li>
             ))}
-            {user && (
-              <li>
-                <NavLink
-                  to="/profile"
-                  className={({ isActive }) =>
-                    `nav-link ${isActive ? "active" : ""}`
-                  }
-                >
-                  My Profile
-                </NavLink>
-              </li>
-            )}
           </ul>
         </div>
 
@@ -152,7 +140,7 @@ const Navbar = () => {
                 />
               </Link>
 
-              <span className="absolute right-0 top-12 bg-gray-800 text-white text-xs font-medium py-1 px-2 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap z-10 pointer-events-none">
+              <span className="absolute right-12 bg-gray-700 text-white text-xs font-medium py-1 px-2 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap z-10 pointer-events-none">
                 {user.displayName || "User"}
               </span>
             </div>
