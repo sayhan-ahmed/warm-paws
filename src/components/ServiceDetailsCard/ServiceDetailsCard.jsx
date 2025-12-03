@@ -42,7 +42,8 @@ const ServiceDetailsCard = ({ service }) => {
   const handleBookNow = (e) => {
     e.preventDefault();
     toast.success("Your booking request has been sent!");
-    e.target.reset();
+    e.target.reset(); 
+    
   };
 
   return (

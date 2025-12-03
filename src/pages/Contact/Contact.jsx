@@ -1,24 +1,18 @@
 import React from "react";
 import toast from "react-hot-toast";
-import { FaPhoneAlt } from "react-icons/fa";
+import { FaPaw, FaPhoneAlt } from "react-icons/fa";
 import { FiMapPin } from "react-icons/fi";
 import { IoMail } from "react-icons/io5";
 
 const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
-    toast.success("Thanks for reaching out! 🐾", {
-      style: {
-        backgroundColor: "white",
-        padding: "16px",
-        color: "#f47726",
-        fontWeight: "bold",
-      },
-      iconTheme: {
-        primary: "#f47726",
-        secondary: "#fff",
-      },
-    });
+    toast.success(
+      <div className="flex">
+        <span>Thanks for reaching out!</span>
+        <FaPaw className="text-orange-400 ml-2 mt-px" />
+      </div>
+    );
     e.target.reset();
   };
 

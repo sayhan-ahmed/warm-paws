@@ -10,7 +10,7 @@ import AuthLayout from "../layouts/AuthLayout";
 import ResetPass from "../pages/ResetPass/ResetPass";
 import AuthPageDesign from "../layouts/AuthPageDesign";
 import ServiceDetails from "../pages/ServiceDetails/ServiceDetails";
-import PrivateRoute from "../provider/PrivateRoute";
+// import PrivateRoute from "../provider/PrivateRoute";
 import Loader from "../components/Loader/Loader";
 import About from "../pages/About/About";
 import Contact from "../pages/Contact/Contact";
@@ -48,6 +48,11 @@ const router = createBrowserRouter([
         path: "/support",
         Component: Support,
       },
+      {
+        path: "/service-details/:id",
+        Component: ServiceDetails,
+        loader: () => fetch("/petCare.json"),
+      },
     ],
   },
   {
@@ -72,15 +77,15 @@ const router = createBrowserRouter([
       },
     ],
   },
-  {
-    path: "/service-details/:id",
-    // Component: ServiceDetails,
-    element: (
-      <PrivateRoute>
-        <ServiceDetails></ServiceDetails>
-      </PrivateRoute>
-    ),
-    loader: () => fetch("/petCare.json"),
-  },
+  // {
+  //   path: "/service-details/:id",
+  //   // Component: ServiceDetails,
+  //   element: (
+  //     <PrivateRoute>
+  //       <ServiceDetails></ServiceDetails>
+  //     </PrivateRoute>
+  //   ),
+  //   loader: () => fetch("/petCare.json"),
+  // },
 ]);
 export default router;
