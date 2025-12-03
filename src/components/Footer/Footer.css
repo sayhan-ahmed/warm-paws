@@ -14,7 +14,7 @@
 .footer-link2:hover {
   transform: scale(1.05);
   color: #f47726;
-  cursor: pointer;
+  /* cursor: pointer; */
 }
 .opening-hours li {
   color: rgb(230, 227, 227);

@@ -1,11 +1,8 @@
 import React, { useState } from "react";
-import {
-  FaFacebookF,
-  FaTwitter,
-  FaYoutube,
-  FaLinkedinIn,
-} from "react-icons/fa";
+import { FaFacebookF, FaYoutube, FaLinkedinIn } from "react-icons/fa";
+import { RiTwitterXFill } from "react-icons/ri";
 import { MdAddCall } from "react-icons/md";
+import { Link } from "react-router";
 
 const teamMembers = [
   {
@@ -65,9 +62,12 @@ const TeamSection = () => {
           </div>
           {/* Explore button */}
           <div className="mb-10 md:mb-0 flex justify-center md:block">
-            <button className="border border-gray-300 rounded-full px-6 py-2 text-gray-700 hover:bg-gray-200 transition-all">
+            <Link
+              to="/coming-soon"
+              className="border border-gray-300 rounded-full px-6 py-2 text-gray-700 hover:bg-gray-200 transition-all"
+            >
               Explore All Groomers
-            </button>
+            </Link>
           </div>
         </div>
         <div className="flex flex-col lg:flex-row gap-10">
@@ -124,15 +124,15 @@ const TeamSection = () => {
 
               {/* Contact button + icons */}
               <div className="mt-6 flex flex-col sm:flex-row items-center gap-4">
-                <button className="btn-secondary">
+                <Link to="/coming-soon" className="btn-secondary">
                   <span>
                     <MdAddCall />
                   </span>
                   Contact Groomer
-                </button>
+                </Link>
                 <div className="flex gap-4 text-gray-600 text-lg">
                   <FaFacebookF className="social" />
-                  <FaTwitter className="social" />
+                  <RiTwitterXFill className="social" />
                   <FaYoutube className="social" />
                   <FaLinkedinIn className="social" />
                 </div>

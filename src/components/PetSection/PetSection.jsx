@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router";
 
 const PetSection = () => {
   const pets = [
@@ -52,7 +53,7 @@ const PetSection = () => {
               className="bg-[#1b1b1b] rounded-xl p-10 
              hover:bg-[#222] hover:ring-1 hover:ring-orange-500 
              hover:shadow-lg hover:shadow-orange-500/50
-             transition transform hover:-translate-y-1 duration-300 cursor-pointer"
+             transition transform hover:-translate-y-1 duration-300"
             >
               <div className="flex justify-center mb-3">
                 <img
@@ -67,12 +68,18 @@ const PetSection = () => {
         </div>
 
         <div className="flex justify-center gap-6 mt-12">
-          <button className="bg-white text-black font-semibold py-3 px-6 rounded-full hover:bg-gray-200 transition transform hover:-translate-y-1 duration-300 cursor-pointer">
+          <Link
+            to="/coming-soon"
+            className="bg-white text-black font-semibold py-3 px-6 rounded-full hover:bg-gray-200 transition transform hover:-translate-y-1 duration-300 cursor-pointer"
+          >
             Find Out More
-          </button>
-          <button className="bg-orange-500 text-white font-semibold py-3 px-6 rounded-full hover:bg-orange-600 transition transform hover:-translate-y-1 duration-300 cursor-pointer">
+          </Link>
+          <Link
+            to="/coming-soon"
+            className="bg-orange-500 text-white font-semibold py-3 px-6 rounded-full hover:bg-orange-600 transition transform hover:-translate-y-1 duration-300 cursor-pointer"
+          >
             Purchase
-          </button>
+          </Link>
         </div>
       </div>
     </section>

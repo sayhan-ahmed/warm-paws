@@ -1,4 +1,4 @@
-import React from "react";
+import { React, useState } from "react";
 import logo from "/logo.png";
 import { RiSendPlaneFill } from "react-icons/ri";
 import "./Footer.css";
@@ -7,15 +7,30 @@ import { PiInstagramLogoFill } from "react-icons/pi";
 import { FaXTwitter } from "react-icons/fa6";
 import { IoCall, IoMailUnread } from "react-icons/io5";
 import { Link } from "react-router";
+import toast from "react-hot-toast";
 
 const Footer = () => {
+  const [email, setEmail] = useState("");
+
+  const handleSubscribe = () => {
+    if (!email) {
+      toast.error("Please enter a valid email address.");
+      return;
+    }
+    toast.success("Subscribed to newsletter! 📩");
+    setEmail("");
+  };
+
   return (
     <footer className="bg-gray-800">
       {/* upper side */}
       <div className="flex flex-col md:flex-row items-start md:items-center justify-between py-10">
         {/* logo side */}
         <div className="w-full px-4 md:px-0 md:w-1/4 mb-10 md:mb-0">
-          <Link to={'/'} className="flex flex-col lg:flex-row items-center justify-center md:justify-start">
+          <Link
+            to={"/"}
+            className="flex flex-col lg:flex-row items-center justify-center md:justify-start"
+          >
             <img
               src={logo}
               alt="website-logo"
@@ -29,23 +44,27 @@ const Footer = () => {
             We’re here to care for your pets and answer all your questions!
             Whether you’re a new pet parent or want to schedule an appointment.
           </p>
+          {/* Newsletter */}
           <div className="ml-0 md:ml-4 lg:ml-11 mt-3 mb-5 relative">
             <input
               type="email"
-              name=""
-              id=""
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               placeholder="Enter your email"
-              className="border border-gray-600 w-full rounded-full py-3 pl-4 text-gray-500 text-sm"
+              className="border border-gray-600 w-full rounded-full py-3 pl-4 text-gray-500 text-sm focus:outline-none focus:border-[#f47726] transition-colors"
             />
-            <RiSendPlaneFill className="text-white text-2xl absolute right-4 top-1/4 cursor-pointer hover:text-[#f47726]" />
+            <RiSendPlaneFill
+              onClick={handleSubscribe}
+              className="text-white text-2xl absolute right-4 top-1/4 cursor-pointer hover:text-[#f47726] transition-colors"
+            />
           </div>
           <div className="flex items-center justify-center md:justify-start gap-3 text-gray-400 text-sm ml-0 md:ml-4 lg:ml-11">
             <IoCall />
-            <p>+880 1519610964</p>
+            <p>+880 1512 345678</p>
           </div>
           <div className="flex items-center justify-center md:justify-start gap-3 text-gray-400 text-sm ml-0 md:ml-4 lg:ml-11">
             <IoMailUnread />
-            <p>sayanahmed228@gmail.com</p>
+            <p>hello@warmpaws.com</p>
           </div>
         </div>
         {/* service */}
@@ -102,9 +121,15 @@ const Footer = () => {
         {/* footer-link bottom */}
         <div>
           <ul className="flex gap-6 pr-0 md:pr-20 text-gray-400 text-sm">
-            <li className="footer-link2">Help Center</li>
-            <li className="footer-link2">Privacy Policy</li>
-            <li className="footer-link2">Terms & Conditions</li>
+            <Link to="/coming-soon" className="footer-link2">
+              Help Center
+            </Link>
+            <Link to="/coming-soon" className="footer-link2">
+              Privacy Policy
+            </Link>
+            <Link to="/coming-soon" className="footer-link2">
+              Terms & Conditions
+            </Link>
           </ul>
         </div>
         {/* footer social */}

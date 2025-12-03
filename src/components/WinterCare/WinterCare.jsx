@@ -1,6 +1,7 @@
 import React from "react";
 import { FaPaw, FaDog, FaCat, FaFish, FaSnowflake } from "react-icons/fa";
 import { MdHealthAndSafety } from "react-icons/md";
+import { Link } from "react-router";
 const winterTips = [
   {
     id: "01",
@@ -67,9 +68,9 @@ const WinterCare = () => {
             <h2 className="text-3xl lg:text-4xl font-extrabold text-gray-900 mt-4 text-center">
               Winter Care Tips for Pets
             </h2>
-            <button className="btn-secondary mx-auto mt-10">
+            <Link to="/contact" className="btn-secondary mx-auto mt-10">
               Contact Us <FaPaw />
-            </button>
+            </Link>
           </div>
         </div>
 

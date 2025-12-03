@@ -33,7 +33,7 @@ const ServiceCard = ({ service, accentColor = "#f47726" }) => {
           </h3>
           <div className="w-10 h-1 bg-gray-100 mx-auto mb-4 rounded-full"></div>
 
-          <p className="text-gray-500 text-sm leading-relaxed line-clamp-3 mb-4 flex-grow">
+          <p className="text-gray-500 text-sm leading-relaxed line-clamp-3 mb-4 grow">
             {description}
           </p>
 

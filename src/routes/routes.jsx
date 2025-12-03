@@ -15,6 +15,7 @@ import Loader from "../components/Loader/Loader";
 import About from "../pages/About/About";
 import Contact from "../pages/Contact/Contact";
 import Support from "../pages/Support/Support";
+import ComingSoon from "../components/ComingSoon/ComingSoon";
 
 const router = createBrowserRouter([
   {
@@ -52,6 +53,10 @@ const router = createBrowserRouter([
         path: "/service-details/:id",
         Component: ServiceDetails,
         loader: () => fetch("/petCare.json"),
+      },
+      {
+        path: "/coming-soon",
+        Component: ComingSoon,
       },
     ],
   },
