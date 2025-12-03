@@ -22,9 +22,9 @@ const Home = () => {
       <HeroSlider></HeroSlider>
 
       {/* service section */}
-      <section className="max-w-6xl mx-auto px-4 py-12">
+      <section className="max-w-7xl mx-auto px-10 py-12">
         {/* Heading */}
-        <div className="flex flex-col md:flex-row md:justify-between my-10 md:mb-30">
+        <div className="flex flex-col md:flex-row md:justify-between my-10">
           <div>
             <h2 className="text-2xl md:text-3xl lg:text-4xl text-center md:text-left font-extrabold text-orange-600">
               Popular Winter Care Services
@@ -44,8 +44,8 @@ const Home = () => {
             </Link>
           </div>
         </div>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {services.slice(0, 6).map((service) => (
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          {services.slice(0, 4).map((service) => (
             <ServiceCard key={service.serviceId} service={service} />
           ))}
         </div>

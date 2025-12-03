@@ -1,6 +1,7 @@
 import React from "react";
 import { FaRegStar, FaStar, FaStarHalfAlt } from "react-icons/fa";
 import { IoPaw } from "react-icons/io5";
+import { Link } from "react-router";
 import Snowfall from "react-snowfall";
 import { Autoplay, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -52,7 +53,7 @@ const HeroSlider = () => {
   ];
 
   return (
-    <div className="relative w-full h-screen bg-gray-100 overflow-hidden pt-10 md:pt-0">
+    <div className="relative w-full h-[65vh] min-h-[550px] bg-[#FAF6F3] overflow-hidden pt-10 sm:pt-0">
       <Snowfall
         snowflakeCount={140}
         color="#0FC6F2"
@@ -76,23 +77,24 @@ const HeroSlider = () => {
       >
         {slides.map((slide, index) => (
           <SwiperSlide key={index}>
-            <div className="flex flex-col md:flex-row items-center justify-between h-full px-10 md:px-20">
+            <div className="flex flex-col sm:flex-row items-center justify-between h-full px-6 md:px-12 lg:px-20 max-w-7xl mx-auto">
               {/* Left text area */}
-              <div className="text-center md:text-left space-y-6 md:w-1/2">
-                <span className="bg-orange-100 text-orange-600 px-4 py-1 rounded-full text-sm font-semibold">
+              <div className="text-center sm:text-left space-y-4 md:space-y-6 md:w-2/3 z-20">
+                <span className="bg-orange-100 text-orange-600 px-4 py-1 rounded-full text-xs md:text-sm font-semibold">
                   {slide.subtitle}
                 </span>
-                <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-extrabold text-gray-800 leading-tight mt-3">
+                <h1 className="text-3xl md:text-4xl lg:text-6xl font-extrabold text-gray-800 leading-tight mt-2">
                   {slide.title}
                 </h1>
-                <button className="btn-secondary mx-auto md:mx-0">
-                  Contact Us{" "}
-                  <span>
-                    <IoPaw />
-                  </span>
-                </button>
-                {/* rating and trusted by */}
-                <div className="mt-4 flex items-center justify-center md:justify-start gap-3">
+                <Link
+                  to="/contact"
+                  className="btn btn-neutral bg-[#f47726] text-white hover:bg-gray-900 border-none px-6 py-3 rounded-full flex items-center gap-2 mx-auto sm:mx-0 transition-all w-fit"
+                >
+                  Contact Us <IoPaw />
+                </Link>
+
+                {/* Rating */}
+                <div className="mt-4 flex items-center justify-center sm:justify-start gap-3">
                   <div className="flex items-center">
                     {Array.from({ length: 5 }).map((_, i) => {
                       const ratingValue = parseFloat(slide.rating);
@@ -117,18 +119,18 @@ const HeroSlider = () => {
                       }
                     })}
                   </div>
-                  <p className="text-gray-500 text-sm">
-                    Trusted by {slide.customers} Customers
+                  <p className="text-gray-500 text-sm font-medium">
+                    Trusted by {slide.customers}
                   </p>
                 </div>
               </div>
 
               {/* Right image area */}
-              <div className="mt-10 md:mt-0 md:w-1/2 flex justify-center">
+              <div className="mt-6 sm:mt-0 md:w-1/3 flex justify-center items-center h-full">
                 <img
                   src={slide.image}
                   alt="Pet"
-                  className="rounded-3xl shadow-2xl object-cover w-96 h-96 md:w-[500px] md:h-[500px]"
+                  className="rounded-3xl shadow-xl object-cover w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96"
                 />
               </div>
             </div>
