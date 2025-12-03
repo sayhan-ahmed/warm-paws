@@ -20,7 +20,7 @@ const AuthLayout = () => {
       <header>
         <Navbar></Navbar>
       </header>
-      <main className="flex-1 relative">
+      <main className="flex-1 relative pt-16">
         <Outlet></Outlet>
       </main>
       <footer>
