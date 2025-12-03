@@ -14,6 +14,7 @@ import PrivateRoute from "../provider/PrivateRoute";
 import Loader from "../components/Loader/Loader";
 import About from "../pages/About/About";
 import Contact from "../pages/Contact/Contact";
+import Support from "../pages/Support/Support";
 
 const router = createBrowserRouter([
   {
@@ -42,6 +43,10 @@ const router = createBrowserRouter([
       {
         path: "/contact",
         Component: Contact,
+      },
+      {
+        path: "/support",
+        Component: Support,
       },
     ],
   },
