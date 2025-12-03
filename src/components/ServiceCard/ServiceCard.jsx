@@ -1,73 +1,82 @@
 import React from "react";
-import { FaStar, FaQuoteRight, FaStarHalfAlt, FaRegStar } from "react-icons/fa";
+import { FaStar, FaStarHalfAlt, FaRegStar } from "react-icons/fa";
+import { FaQuoteRight } from "react-icons/fa6";
 import { Link } from "react-router";
 
-const ServiceCard = ({ service, accentColor = "#4A4645" }) => {
+const ServiceCard = ({ service, accentColor = "#f47726" }) => {
   const { serviceId, serviceName, image, description, rating, price } = service;
+
   return (
-    <div
-      className="relative bg-white rounded-2xl shadow-md px-6 pt-12 pb-6 w-full max-w-sm mx-auto transition hover:shadow-lg mt-16"
-      style={{ borderTop: `4px solid ${accentColor}` }}
-    >
-      {/* Avatar Circle */}
+    <div className="pt-10 h-full">
       <div
-        className="absolute -top-10 left-1/2 transform -translate-x-1/2 bg-white rounded-full p-1 shadow-md"
-        style={{ border: `3px solid ${accentColor}` }}
+        className="relative bg-white rounded-2xl shadow-sm hover:shadow-xl transition-shadow duration-300 px-6 pt-12 pb-6 w-full h-full flex flex-col"
+        style={{ borderTop: `4px solid ${accentColor}` }}
       >
+        {/* Avatar Circle */}
         <div
-          className="w-28 h-28 rounded-full overflow-hidden flex items-center justify-center"
-          style={{ backgroundColor: `${accentColor}20` }}
+          className="absolute -top-10 left-1/2 transform -translate-x-1/2 bg-white rounded-full p-1 shadow-md"
+          style={{ border: `3px solid ${accentColor}` }}
         >
-          <img
-            src={image}
-            alt={serviceName}
-            className="w-full h-full object-cover rounded-full"
-          />
-        </div>
-      </div>
-
-      {/* Content */}
-      <div className="text-center mt-12">
-        <h3 className="text-lg font-extrabold" style={{ color: accentColor }}>
-          {serviceName}
-        </h3>
-        <hr className="my-3 border-gray-200" />
-        <p className="text-gray-500 text-sm leading-relaxed line-clamp-3">
-          {description}
-        </p>
-
-        <div className="flex justify-between items-center mt-5">
-          {/* Rating */}
-          <div className="flex items-center gap-1 text-orange-400">
-            {Array.from({ length: 5 }).map((_, i) => {
-              const ratingValue = parseFloat(rating);
-              if (ratingValue >= i + 1) {
-                return <FaStar key={i} className="text-sm" />;
-              } else if (ratingValue >= i + 0.5) {
-                return <FaStarHalfAlt key={i} className="text-sm" />;
-              } else {
-                return <FaRegStar key={i} className="text-gray-300 text-sm" />;
-              }
-            })}
-            <span className="ml-1">{rating}</span>
+          <div className="w-24 h-24 rounded-full overflow-hidden flex items-center justify-center bg-gray-50">
+            <img
+              src={image}
+              alt={serviceName}
+              className="w-full h-full object-cover"
+            />
           </div>
-          <p className="text-green-600 text-lg font-semibold mt-1">${price}</p>
         </div>
-        {/* Bottom Section */}
-        <div className="flex items-center justify-between mt-5">
+
+        {/* Content */}
+        <div className="text-center mt-6 grow flex flex-col">
+          <h3 className="text-xl font-bold text-gray-800 mb-2">
+            {serviceName}
+          </h3>
+          <div className="w-10 h-1 bg-gray-100 mx-auto mb-4 rounded-full"></div>
+
+          <p className="text-gray-500 text-sm leading-relaxed line-clamp-3 mb-4 flex-grow">
+            {description}
+          </p>
+
+          <div className="flex justify-between items-center border-t border-gray-100 pt-4 mt-auto">
+            {/* Rating */}
+            <div className="flex items-center gap-1 text-orange-400">
+              {Array.from({ length: 5 }).map((_, i) => {
+                const ratingValue = parseFloat(rating);
+                if (ratingValue >= i + 1) {
+                  return <FaStar key={i} className="text-sm" />;
+                } else if (ratingValue >= i + 0.5) {
+                  return <FaStarHalfAlt key={i} className="text-sm" />;
+                } else {
+                  return (
+                    <FaRegStar key={i} className="text-gray-200 text-sm" />
+                  );
+                }
+              })}
+              <span className="text-xs text-gray-400 ml-1 font-medium">
+                ({rating})
+              </span>
+            </div>
+            <p className="text-[#f47726] text-lg font-bold">${price}</p>
+          </div>
+        </div>
+
+        {/* Button */}
+        <div className="flex items-center justify-between mt-6">
           <Link
             to={`/service-details/${serviceId}`}
-            className="btn-primary rounded-tl-2xl rounded-br-2xl cursor-pointer"
+            className="bg-[#f47726] hover:bg-gray-800 text-white text-sm font-bold py-2 px-6 rounded-full transition-colors duration-300 shadow-lg shadow-orange-100"
           >
             View Details
           </Link>
 
-          {/* Quote Icon */}
           <div
             className="p-2 rounded-full"
-            style={{ backgroundColor: `${accentColor}20`, color: accentColor }}
+            style={{
+              backgroundColor: `${accentColor}20`,
+              color: `${accentColor}90`,
+            }}
           >
-            <FaQuoteRight size={30} />
+            <FaQuoteRight size={20} />
           </div>
         </div>
       </div>

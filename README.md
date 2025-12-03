@@ -12,7 +12,7 @@ WarmPaws offers a rich, interactive, and winter-themed experience designed to de
 
 - **Winter-Themed Hero Slider:** A Swiper-powered carousel showcasing pets in cozy outfits, enhanced with snowfall animations for a festive vibe.
 - **Popular Winter Care Services:** Dynamic service cards loaded from JSON, displaying images, ratings, prices, and “View Details” links.
-- **Service Details (Protected Route):** Exclusive detailed pages for logged-in users, featuring a booking form with real-time toast notifications.
+- **Service Details:** Exclusive detailed pages, featuring a booking form with real-time toast notifications.
 
 ### 🔐 Authentication System
 
