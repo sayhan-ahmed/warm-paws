@@ -20,7 +20,7 @@ const Root = () => {
       <header>
         <Navbar></Navbar>
       </header>
-      <main>
+      <main className="pt-16">
         <Outlet></Outlet>{" "}
       </main>
       <footer>
